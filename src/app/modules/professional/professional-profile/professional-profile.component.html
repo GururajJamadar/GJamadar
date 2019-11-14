@@ -1,0 +1,263 @@
+<app-professional-sidebar></app-professional-sidebar>
+<br><br>
+<div class="offset-2  col-md-10  col-sm-10 fullpage">
+  <div class="col-md-12">
+    <mat-tab-group>
+        <mat-tab label="PERSONAL DETAILS">
+            <div class="row">
+                <div class="col-sm-9 col-md-9 col-md-offset-3 ">
+                    <div class="preview text-center" (change)="selectProfilePic1($event)">
+                        <form class="example-form" *ngIf="personalde">
+                            <div class="preview text-center" (change)="selectProfilePic1($event)"> <span *ngIf="!profileViews.profile_photo">
+                                    <img (click)="fileInput.click()" class="preview-img" src="assets/images/account.png" alt="Preview Image" width="100" height="100" /></span>
+                                <span *ngIf="profileViews.profile_photo">
+                                    <img class="preview-img" src={{profileViews.profile_photo}} alt="Preview Image" width="100" height="100" /></span>
+                                <div class="browse-button">
+                                    Upload file
+                                    <input class="browse-input" type="file" required name="UploadedFile" id="UploadedFile" #fileInput (change)="selectProfilePic1($event)">
+                                </div>
+                                <span class="Error"></span>
+                            </div>
+                            <div class="modal fade" #updatesucess2>
+                                <div class="modal-dialog modal-md">
+                                    <div class="modal-content">
+                                        <div class="modal-header" style="background-color: #61b1ff; height:50px;">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <h3 class="text-center" style="margin-top: -5px;
+                      color: #eee;"><b class="glyphicon glyphicon-thumbs-up"></b> Thank You</h3>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h4 class="text-center">Image Uploaded Successfully</h4>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger pull-right" data-dismiss="modal">Ok</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <mat-form-field class="example-full-width">
+                                <input matInput [(ngModel)]="profileViews.first_name" name="name" #name="ngModel" required placeholder="Enter Full Name">
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width">
+                                <input matInput name="mobile_number" [(ngModel)]="profileViews.mobile_number" #mobile="ngModel" placeholder="Enter Mobile Number" minlength="10" maxlength="10">
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width">
+                                <textarea matInput placeholder="Description" name="desc" [(ngModel)]="profileViews.description" #desc="ngModel"></textarea>
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width">
+                                <input matInput name="exp" [(ngModel)]="profileViews.experience" #exp="ngModel" placeholder="Enter your experience" placeholder="Enter your experience" minlength="1" maxlength="2">
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Gender</mat-label>
+                                <mat-select [(ngModel)]="profileViews.gender">
+                                    <mat-option *ngFor="let gender of genders" [value]="gender">
+                                        {{gender}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Email" name="email" [(ngModel)]="profileViews.email_id" #email="ngModel">
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width">
+                                <input matInput [matDatepicker]="picker" placeholder="Choose a date" name="yop" [(ngModel)]="profileViews.date_of_birth">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width">
+                                <input matInput name="adhar" [(ngModel)]="profileViews.aadhar_number" #adhar="ngModel" placeholder="Enter your aadhaar number" minlength="12" maxlength="12" required>
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width">
+                                <input matInput name="bank" [(ngModel)]="profileViews.bank_name" #bank="ngModel" required placeholder="Enter your bank name">
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width">
+                                <input matInput name="account" [(ngModel)]="profileViews.bank_acnt_number" #account="ngModel" minlength="12" maxlength="12 " required placeholder="Enter your bank account number" minlength="10" maxlength="16">
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width">
+                                <input matInput name="ifsc" [(ngModel)]="profileViews.bank_ifsc" #ifsc="ngModel" minlength="11" maxlength="11 " required placeholder="Enter your bank IFSC code">
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width">
+                                <input matInput name="address" [(ngModel)]="profileViews.bank_address" #address="ngModel" required placeholder="Enter the branch name">
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Select All Known Languages</mat-label>
+                                <mat-select name="lang" [(ngModel)]="profileViews.languages" #languages="ngModel" required placeholder="Select All Known Languages">
+                                    <mat-option *ngFor="let languages of Languages" [value]="languages">
+                                        {{languages}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Consultation Video Call Price</mat-label>
+                                        <input matInput name="price" [(ngModel)]=" profileViews.video_price " placeholder="enter the price">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="example-button-row">
+                                <button mat-raised-button color="primary" (click)="personalupdate(profileViews)" style="float: left;">Update</button>
+                                <button mat-raised-button color="warn" (click)="cancel_upload()" style="float: right;">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+
+<div class="modal" #updatesucess>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #61b1ff;">
+        <h4 class="modal-title" style="color: #eee; text-align: center;">Thank You</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+       <h5>Updated Successfully</h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+        <!-- <div class="modal fade" #updatesucess>
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: #61b1ff; height:50px;">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h3 class="text-center" style="margin-top: -5px;
+                            color: #eee;"><b class="glyphicon glyphicon-thumbs-up"></b> Thank You</h3>
+                    </div>
+                    <div class="modal-body">
+                        <h4 class="text-center">Updated Successfully</h4>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger pull-right" data-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- ********** Second Form ********** -->
+        <mat-tab label="OFFICE DETAILS">
+            <div class="row">
+                <div class="col-sm-9 col-md-9 col-md-offset-3">
+                    <form form class="example-form">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Address</mat-label>
+                            <input matInput [(ngModel)]="profileViews.address" name="add" #add="ngModel" placeholder="Enter your address">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>City</mat-label>
+                            <input matInput [(ngModel)]="profileViews.city" name="city" #city="ngModel" placeholder="Enter your city">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>State</mat-label>
+                            <mat-select name="state" [(ngModel)]="profileViews.state" id="state" #state="ngModel">
+                                <mat-option *ngFor="let state of states" [value]="state">
+                                    {{state}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Country</mat-label>
+                            <mat-select name="country" [(ngModel)]="profileViews.country" id="country" #country="ngModel">
+                                <mat-option *ngFor="let country of countries" [value]="country">
+                                    {{country}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <div class="ast">
+                            <label>Schedule Your Consulting Time</label><br>
+                            <label *ngFor="let role of ddays">
+                                &nbsp;&nbsp;&nbsp;
+                                <input type="checkbox" [(checklist)]="profileViews.days" [checklistValue]="role.text" style="margin-left: -15px;" />
+                                {{role.text}}
+                            </label>
+                        </div>
+                        <p class="para">Morning Timings</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>From</mat-label>
+                                    <mat-select [(ngModel)]="profileViews.mstime" id="mst" name="mstime" #mstime="ngModel" required>
+                                        <mat-option *ngFor="let mstime of mstimings" [value]="mstime">{{mstime}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>To</mat-label>
+                                    <mat-select [(ngModel)]="profileViews.metime" id="metime" name="metime" #metime="ngModel" required>
+                                        <mat-option *ngFor="let metime of metimings" [value]="metime">{{metime}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <p class="para">Evening Timings</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>From</mat-label>
+                                    <mat-select [(ngModel)]="profileViews.estime" id="est" name="estime" #estime="ngModel" required>
+                                        <mat-option *ngFor="let estime of estimings" [value]="estime">{{estime}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>To</mat-label>
+                                    <mat-select [(ngModel)]="profileViews.eetime" id="ee_time" name="eetime" required>
+                                        <mat-option *ngFor="let eetime of eetimings" [value]="eetime">{{eetime}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="example-button-row">
+                            <button mat-raised-button color="primary" (click)="officeupdate(profileViews)" style="float: left;">Update</button>
+                            <button mat-raised-button color="warn" (click)="cancel_upload()" style="float: right;">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+
+    
+
+<div class="modal" #updatesucess1>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #61b1ff;">
+        <h4 class="modal-title" style="color: #eee; text-align: center;">Thank You</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+       <h5>Updated Successfully</h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal" #updatesucess2>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #61b1ff;">
+        <h4 class="modal-title" style="color: #eee; text-align: center;">Thank You</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+       <h5>Image Uploaded Successfully</h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>

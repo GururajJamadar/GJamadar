@@ -1,0 +1,52 @@
+<app-professional-sidebar></app-professional-sidebar>
+<br><br>
+
+<div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 bookingscontent">
+    <div class="col-xs-12 col-md-11 col-sm-12 col-md-offset-1" id="set" *ngIf="pendingapts1.length==0" > You don't have any pending appointment yet.</div>
+
+</div>
+  <div class="col-md-10 col-sm-10 offset-2" >
+<div class="divborder" *ngFor=" let mybooking of pendingapts1">
+      <div *ngIf="mybooking.status=='Pending'">
+        <div class="row">
+          
+          <img class="astroimage" src="{{mybooking.client_photo}}">
+        </div>
+          <div class="astrobookingtextinclient">
+            <div style="margin-left: 50px;">
+              <br>
+              <div class="Cliname">
+              {{mybooking.client_name}}</div><br>
+              <div ><i class="fa fa-calendar" style="color: #004b58b0;" aria-hidden="true"></i>&nbsp;{{mybooking.date_of_booking}}</div><br>
+              <div ><i class="fa fa-clock" style="color: #004b58b0;" aria-hidden="true"></i>&nbsp;{{ mybooking.time_of_booking}}</div><br>
+            
+               <i class="fa fa-exclamation-triangle" style="color: yellow;" aria-hidden="true"></i>&nbsp;{{mybooking.status}}
+                  
+                <div><button class="btn btn-danger" (click)="confirm_cancelappointment(mybooking)" style="text-align: center; background-color:red;margin-bottom: -62px;
+    margin-left: -36px;"><i class="fa fa-times-circle" aria-hidden="true"></i>&nbsp;Cancel</button> </div>
+               
+               <div style="margin-left: 100px;">
+                   
+                    <button class="btn btn-success" (click)="videomode(mybooking)"><i class="fa fa-file-video" aria-hidden="true"></i>&nbsp;Videocall</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="modal" #cancelappointment>
+  <div class="modal-dialog ">
+    <div class="modal-content" style="height: 190px;">
+      <div class="modal-header" style=" background-color: rgb(40,110,171);">
+        <h4 class="modal-title text-center" style="color: white;font-size:18px;">Are you sure, you want to cancel the appointment?</h4>
+      </div>
+      <div class="modal-body text-center" style="font-size: 14px;">
+        If you click yes, appointment will be cancelled and amount will be added to your wallet.
+      </div>
+      <div class="modal-footer text-center" style="border-top:none;margin-right: 231px;">
+        <button class="md-raised md-warn btncolor" data-dismiss="modal">Cancel</button>
+        <button class="md-raised md-primary btncolor" (click)="reschedule_appoint(mybooking_data)">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,97 @@
+
+.contactclass {
+        
+    padding: 23px;
+}
+
+.buttonsubmit {
+    width: 180px;
+    padding: 12px;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+}
+.divborder1{
+    box-shadow: 6px 8px 20px 0px lightgrey;
+   margin-left: 122px; 
+   margin-top:-5px;
+   margin-right:0px;
+   margin-bottom: 0px;
+}
+
+.divborder2{
+    box-shadow: 6px 8px 20px 0px lightgrey;
+   margin-left:30px; 
+   margin-top:-216px;
+   margin-right:0px;
+   margin-bottom: 0px;
+}
+.divborder3{
+    box-shadow: 6px 8px 20px 0px lightgrey;
+   margin-left:122px; 
+   margin-top:26px;
+   margin-right:0px;
+   margin-bottom: 0px;
+}
+.contact{
+ color:#03a2fd;
+/* margin-top: -25px;
+*/ text-align: center;
+ margin-bottom: 0px;
+ margin-left:-950px;
+}
+.md-warn{
+background-color:  #03a2fd;
+margin-left: 150px;
+margin-right:0px;
+margin-top: 0px;
+margin-bottom:0px;
+border: none;
+color: white;
+padding: 9px 22px;
+cursor: pointer;
+}
+
+@media screen and (min-width:360px) and (max-width: 700px){
+
+.divborder1{
+    box-shadow: 6px 8px 20px 0px lightgrey;
+        margin-left: 0px;
+}
+
+.divborder2{
+    box-shadow: 6px 8px 20px 0px lightgrey;
+         margin-top: 25px;
+         margin-left:0px;
+
+ 
+}
+.divborder3{
+    box-shadow: 6px 8px 20px 0px lightgrey;
+   margin-left:0px; 
+   margin-top:26px;
+   margin-right:0px;
+   margin-bottom: 0px;
+}
+
+ .md-warn{
+background-color:  #03a2fd;
+margin-left: 70px;
+margin-right:25px;
+margin-top: 0px;
+margin-bottom:7px;
+border: none;
+color: white;
+padding: 9px 22px;
+cursor: pointer;
+}
+
+.contact {
+    color: #03a2fd;
+    margin-top: -21px;
+    text-align: -webkit-auto;
+    margin-bottom: 0px;
+    margin-left: -10px;
+}
+
+}

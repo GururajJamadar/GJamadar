@@ -1,0 +1,125 @@
+<!-- <app-header></app-header> -->
+<app-user-sidebar></app-user-sidebar>
+<div class="abooking">
+  <div class="row">
+    <div class="col-md-8 col-sm-8 col-12 offset-md-3">
+      <div class="col-md-12 col-sm-12 col-xs-8">
+        <div>
+          <h1 style="text-align: center; font-size: 20px;margin-top: 25px;margin-left: -85px;">Appointment Details</h1>
+        </div>
+      </div>
+      <div class="col-md-4 col-4 visible-xs" style="text-align: center;margin-top: 25px;">
+        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+          <path fill="#07a3ff" d="M21,18V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5A2,2 0 0,1 5,3H19A2,2 0 0,1 21,5V6H12C10.89,6 10,6.9 10,8V16A2,2 0 0,0 12,18M12,16H22V8H12M16,13.5A1.5,1.5 0 0,1 14.5,12A1.5,1.5 0 0,1 16,10.5A1.5,1.5 0 0,1 17.5,12A1.5,1.5 0 0,1 16,13.5Z" />
+        </svg>
+      </div>
+      <div class="col-md-5 col-sm-5 col-xs-6 col-md-offset-3">
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker3" placeholder="" [(ngModel)]="date" (ngModelChange)="datewise_timeslots($event)" [attr.disabled]="(days == '')">
+          <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+          <mat-datepicker #picker3></mat-datepicker>
+        </mat-form-field>
+        <br>
+      </div>
+      <div *ngIf="booking_slots1.length==0" class="col-xs-12 col-md-7 col-sm-12 offset-3 bookslot" style="font-size: 18px; color: red; text-align: center; margin-top: 5vh;">Today is not available please check with other date.</div>
+      <div class="col-md-7 col-xs-12 offset-3 bookslot">
+        <div class="row">
+          <h3 class="col-md-3 col-xs-4 col-sm-4 modal-title-consultation" style="color:black;    font-size: 20px;">Book slots</h3>
+          <div class="col-md-3 col-xs-3" style="margin-top: 20px">
+            <div class="information" style="width: 15px;height: 15px;border: 1px solid #337ab7;
+                       background-color: white;">
+            </div><span style="font-weight: 600; color:black;font-size: 13px;">Available</span>
+          </div>
+          <div class="col-md-3 col-xs-3" style="margin-top: 20px">
+            <div class="information" style="width: 15px;height: 15px;border: 1px solid gray;
+                          background-color: darkgray;">
+            </div><span style="font-weight: 600; color:black;font-size: 13px;"> Booked</span>
+          </div>
+          <div class=" col-md-12 col-xs-12 modclass" style="margin-top: 2vh;">
+            <div class="row">
+              <div>
+                <div class="col-md-3 col-sm-4 col-xs-6 DocumentItem" *ngFor="let slots of booking_slots1">
+                  <button class="slotsclass" [disabled]="slots.status == 'Booked' " (click)="selectslot(slots,astroprice,wallet_money,'continue')" [ngStyle]="{'background-color':slots.time_of_booking === time?'white':'green','background-color':slots.status == 'Booked'?'gray':'white'}">
+                    {{slots.time_of_booking}}
+                  </button>
+                </div>
+                <div class="col-md-12 col-xs-12 col-sm-12 modclass" *ngIf="warningalrt" style="color:red; font-weight:500; ">Note: Choose 'Personal Meeting' option only if you want to meet astrologer in his office Personally.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hidden-xs" style="margin-top: 60px;"></div>
+    <div class="col-md-3 col-11 col-sm-3 offset-md-8">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-4 hidden-xs" style="text-align: center;margin-top: -110px">
+          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+            <path fill="#07a3ff" d="M21,18V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5A2,2 0 0,1 5,3H19A2,2 0 0,1 21,5V6H12C10.89,6 10,6.9 10,8V16A2,2 0 0,0 12,18M12,16H22V8H12M16,13.5A1.5,1.5 0 0,1 14.5,12A1.5,1.5 0 0,1 16,10.5A1.5,1.5 0 0,1 17.5,12A1.5,1.5 0 0,1 16,13.5Z" />
+          </svg>
+          <p style="color:green;font-size: 13px;">Remaining walletmoney: {{wallet_money}}</p>
+        </div>
+        <div class="col-md-12 col-12 col-sm-12 paymentprice" style="margin-top: -60px;">
+          <form class="paymentform">
+            <div class="col-md-12 col-xs-12 heading" style="text-align: center;font-size: 13px;">
+              PRICE DETAILS
+              <hr>
+            </div>
+            <div class="row">
+            <div class="col-md-6 col-xs-5" style="font-size: 13px;">
+              <p class="pricesname">Astrologer Fee</p>
+              <p class="pricesname">Wallet money</p>
+              <p class="pricesname">Service Charge </p>
+              <p class="pricesname">GST (18%)</p>
+            </div>
+            <div class="col-md-4 col-xs-4">
+              <ul>
+                <li class="prices">₹{{astroprice}}</li>
+                <li class="prices">-₹{{usedMoney}}</li>
+                <li class="prices">₹{{servicecharge1}}</li>
+                <li class="prices">₹{{cgst}}</li>
+              </ul>
+            </div>
+          </div>
+            <div class="col-md-12 col-xs-12">
+              <hr>
+            </div>
+            <div class="row">
+            <div class="col-md-8 col-xs-8">
+              <p class="pricesname" style="font-size: 13px;">Amount Payable</p>
+            </div>
+            <div class="col-md-4 col-xs-4">
+              <p class="totalprice">₹{{totalprice}}</p>
+            </div>
+          </div>
+            <div class="col-md-12 col-xs-12">
+              <hr>
+               <div style="text-align: center;">
+                <button id="continue" *ngIf="disableContinueslot&&astroprice&&!walletSave" class="md-raised md-warn" (click)="moveToPayment()" [disabled]="warningalrt&&dateseleceted">Continue</button>
+                <button id="continue" *ngIf="walletSave&&disableContinueslot" class="md-raised md-warn" (click)="move_booking()" [disabled]="warningalrt&&dateseleceted">Confirm Booking</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" #appointsucess>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #61b1ff; height:50px;">
+        <h3 class="text-center" style="margin-top: -5px;
+                              color: #eee;"><b class="glyphicon glyphicon-thumbs-up"></b> Thank You</h3>
+      </div>
+      <div class="modal-body">
+        <h4 class="text-center">Your appointment is booked successfully</h4>
+      </div>
+      <div class="modal-footer" style="text-align: center;">
+        <button type="button" data-dismiss="modal" style="background-color: #61b1ff;" routerLink="/client/clientdashboard">ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+

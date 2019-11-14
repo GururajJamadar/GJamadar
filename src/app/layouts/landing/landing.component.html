@@ -1,0 +1,713 @@
+<div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+    
+    <div class="site-navbar-wrap js-site-navbar bg-white">
+      
+      <div class="container">
+        <div class="site-navbar bg-light">
+          <div class="py-1">
+            <div class="row align-items-center">
+              <div class="col-2">
+                <a href="">
+                <h2 class="mb-0 site-logo"><img style="width: 60px;height: 60px;" src="assets/images/GLEARNLOGO.png"></h2></a>
+              </div>
+              <div class="col-10">
+                <nav class="site-navigation text-right" role="navigation">
+                  <div class="container">
+                    
+                    <div class="d-inline-block d-lg-none  ml-md-0 mr-auto py-3"><a href="" class="site-menu-toggle js-menu-toggle"><span class="icon-menu h3"></span></a></div>
+                    <ul class="site-menu js-clone-nav d-none d-lg-block">
+                      <li class="active">
+                        <a href="" >Home</a>
+                      </li>
+                      <li><a routerLink="/aboutus">About</a></li>
+                      <li><a routerLink="/contactus">Contact</a></li>
+                      <li (click)="sinupformsopen();" style="cursor: pointer;"><a>Signup</a></li>
+                      <li *ngIf="current_user==0">
+                       <a routerLink="registration/login/">Login</a>
+                      </li>
+                      <li *ngIf="current_user!=0"> <a href="" (click)="logoutuser(data)">Logout</a>
+                      </li>              
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="slide-one-item home-slider owl-carousel">
+      
+      <div class="site-blocks-cover overlay" style="background-image: url(assets/images/learning.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade">
+              <h2 class="caption mb-2">Glearn for everybody</h2>
+              <h1 class="">Welcome To Glearn</h1>
+              
+            </div>
+          </div>
+        </div>
+      </div>  
+
+      <div class="site-blocks-cover overlay" style="background-image: url(assets/images/Astrology.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade">
+              <h2 class="caption mb-2">Na Bhutho Na Bhavishyathi</h2>
+              <h1 class="">Astrology</h1>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+      <div class="site-blocks-cover overlay" style="background-image: url(assets/images/hero_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade">
+              <h2 class="caption mb-2">Peace full life</h2>
+              <h1 class="">Yoga & Meditation</h1>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+      <div class="site-blocks-cover overlay" style="background-image: url(assets/images/gym.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade">
+              <h2 class="caption mb-2">Build your Muscle</h2>
+              <h1 class="">Gym Training</h1>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+      <div class="site-blocks-cover overlay" style="background-image: url(assets/images/sports.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade">
+              <h2 class="caption mb-2">Active & Helth</h2>
+              <h1 class=""> Sports and Trainee</h1>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+      <div class="site-blocks-cover overlay" style="background-image: url(assets/images/cooking.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade">
+              <h2 class="caption mb-2">Taste for Better</h2>
+              <h1 class="">Cooking</h1>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+
+    <div class="site-block-half d-flex ">
+      <div class="image bg-image d-none d-sm-block" style="background-image: url('assets/images/learn3.jpg');"></div>
+      <div class="text">
+        <h2 class="font-family-serif">Welcome To Glearn</h2>
+        <span class="caption d-block text-info pl-0 mb-4">Hello there!</span>
+        <p class="mb-5">Glearn is an interactive online platform that makes it faster and easier to find the online Professionals across the world. Glearn provides you with the detailed informantion on perticular professionals,their area of expertise and experience. You can fidget through our list of verified professions and select the right person for your needs. you can also make payments to the Glearn from the app itself, making the complete process clean, simple and hassle free!</p>
+     <!--    <p><a href="#" class="btn btn-primary pill px-4 py-3 text-white">See The Yoga Pricing</a></p> -->
+
+      </div>
+    </div>
+
+    <div class="site-section bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+            <h2 class="mb-5">Our Programs</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div class="program">
+              <a class="d-block mb-0 thumbnail"><img src="assets/images/astroprg.jpg" alt="Image" class="img-fluid"></a>
+              <div class="program-body">
+                <h3 class="heading mb-2"><a></a>Become Astrologer</h3>
+                 <p><a>Horoscope</a> with <a>Your Guru</a></p>
+                <div class="span"><span class="mr-4"><span class="icon-schedule icon"></span> 30 min</span> <span> <span class="icon-signal icon"></span> Beginner</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div class="program">
+              <a class="d-block mb-0 thumbnail"><img src="assets/images/onlinetech.jpg" alt="Image" class="img-fluid"></a>
+              <div class="program-body">
+                <h3 class="heading mb-2"><a >Have good Knowledge</a></h3>
+                <p><a >Clear doubts</a> from <a>Teachers</a></p>
+                <div class="span"><span class="mr-4"><span class="icon-schedule icon"></span> 30 min</span> <span> <span class="icon-signal icon"></span> Beginner</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div class="program">
+              <a class="d-block mb-0 thumbnail"><img src="assets/images/sportslrn.jpg" alt="Image" class="img-fluid"></a>
+              <div class="program-body">
+                <h3 class="heading mb-2"><a>Become A Sportsperson</a></h3>
+                <p><a >Learn Technics</a> from <a >Coach</a></p>
+                <div class="span"><span class="mr-4"><span class="icon-schedule icon"></span> 30 min</span> <span> <span class="icon-signal icon"></span> Beginner</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div class="program">
+              <a class="d-block mb-0 thumbnail"><img src="assets/images/gymtriny.jpg" alt="Image" class="img-fluid"></a>
+              <div class="program-body">
+                <h3 class="heading mb-2"><a>Shape Your Body</a></h3>
+                <p><a>Build Muscle</a> with <a>your Trine</a></p>
+                <div class="span"><span class="mr-4"><span class="icon-schedule icon"></span> 30 min</span> <span> <span class="icon-signal icon"></span> Beginner</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div class="program">
+              <a class="d-block mb-0 thumbnail"><img src="assets/images/img_5.jpg" alt="Image" class="img-fluid"></a>
+              <div class="program-body">
+                <h3 class="heading mb-2"><a>Yoga For Health</a></h3>
+                <p><a>Yoga</a> From <a>Yoga Guru</a></p>
+                <div class="span"><span class="mr-4"><span class="icon-schedule icon"></span> 30 min</span> <span> <span class="icon-signal icon"></span> Beginner</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div class="program">
+              <a class="d-block mb-0 thumbnail"><img src="assets/images/cooktech.jpg" alt="Image" class="img-fluid"></a>
+              <div class="program-body">
+                <h3 class="heading mb-2"><a>Taste Driver</a></h3>
+                <p><a>LearnCooking</a> with <a>Your Chef</a></p>
+                <div class="span"><span class="mr-4"><span class="icon-schedule icon"></span> 30 min</span> <span> <span class="icon-signal icon"></span> Beginner</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!-- new cords -->
+ <div class="col-md-6 mx-auto text-center">
+            <h2 class="proftext">Online Professionals<hr></h2>
+  </div>
+<div>
+  <div id="team">
+    <div class="col-md-12">
+     <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3" *ngFor="let obj of livedata">
+      <div class="card">
+        <div class="frontside">
+        <div class="card-body1 text-centerd">
+          <div>
+          <div *ngIf="obj.profile_photo; else accounttype"><img class="imgonline" [src]="obj.profile_photo" (click)="proffDetails(obj)">
+          </div>
+          <div>
+            <ng-template #accounttype>
+            <img class="imgonline"src="assets/images/account.png" (click)="proffDetails(obj)">
+            </ng-template>
+          </div>
+          <h4 class="card-title">{{obj.first_name}}</h4>
+          <h5 class="card-proff">{{obj.role}}</h5>
+          <div *ngIf="obj.finalatings" class="starrate">
+          <ngb-rating [(rate)]="obj.finalatings"></ngb-rating>
+                   <p class="starrate">{{obj.rating}}</p>
+          </div>
+           <div *ngIf="!obj.finalatings" class="nonStar">
+              <ngb-rating [rate]="currentRate"></ngb-rating>
+          </div>
+          <hr>
+        </div>
+            <div>
+              <p><img class="expresp" src="assets/images/download.png">Exp:
+                {{obj.experience}} years</p>
+            </div>
+            <div>
+              <p><img class="vidprice" src="assets/images/images.png">{{obj.video_price}} /30min</p>
+            </div>
+             <div *ngIf="obj.is_online" (click)="booking10(obj)">
+                <div><img class="onlineimg" src="assets/images/call.png"><br><p class="online12"> ONLINE</p></div>
+            </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div><br><br>
+</div>
+</div>
+<!--    -->
+<div class="col-md-6 mx-auto text-center">
+            <h2 class="proftext">Our Gallary<hr></h2>
+  </div>
+    <div class="row no-gutters">
+          <div class="col-md-6 col-lg-3">
+            <a href="assets/images/a15.jpg" class="image-popup img-opacity"><img src="assets/images/a15.jpg" alt="Image" class="img-fluid"></a>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <a href="assets/images/lear.jpg" class="image-popup img-opacity"><img src="assets/images/lear.jpg" alt="Image" class="img-fluid"></a>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <a href="assets/images/hard.jpg" class="image-popup img-opacity"><img src="assets/images/hard.jpg" alt="Image" class="img-fluid"></a>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <a href="assets/images/a32.jpg" class="image-popup img-opacity"><img src="assets/images/a32.jpg" alt="Image" class="img-fluid"></a>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <a href="assets/images/a23(3).jpg" class="image-popup img-opacity"><img src="assets/images/a23(3).jpg" alt="Image" class="img-fluid"></a>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <a href="assets/images/stu.jpg" class="image-popup img-opacity"><img src="assets/images/stu.jpg" alt="Image" class="img-fluid"></a>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <a href="assets/images/dum.jpg" class="image-popup img-opacity"><img src="assets/images/dum.jpg" alt="Image" class="img-fluid"></a>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <a href="assets/images/img_7.jpg" class="image-popup img-opacity"><img src="assets/images/img_7.jpg" alt="Image" class="img-fluid"></a>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <a href="assets/images/lrn.jpeg" class="image-popup img-opacity"><img src="assets/images/lrn.jpeg" alt="Image" class="img-fluid"></a>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <a href="assets/images/elearn.jpg" class="image-popup img-opacity"><img src="assets/images/elearn.jpg" alt="Image" class="img-fluid"></a>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <a href="assets/images/ast.jpg" class="image-popup img-opacity"><img src="assets/images/ast.jpg" alt="Image" class="img-fluid"></a>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <a href="assets/images/img_2.jpg" class="image-popup img-opacity"><img src="assets/images/img_2.jpg" alt="Image" class="img-fluid"></a>
+          </div>
+          <br><br>
+        </div>
+
+<!--   -->
+
+    <div class="py-5 quick-contact-info">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <div>
+              <span class="icon-room text-white h2 d-block"></span>
+              <h2>Location</h2>
+              <p class="mb-0">Bangalore <br>  56 Sahakaranagar Hebbal</p>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div>
+              <span class="icon-clock-o text-white h2 d-block"></span>
+              <h2>Service Times</h2>
+              <p class="mb-0">Monday-Saturday at 9PM - 6PM <br>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div>
+              <span class="icon-comments text-white h2 d-block"></span>
+              <h2>Get In Touch</h2>
+              <p class="mb-0">Email: Gowdanar.com<br>
+              Phone: 080 4147-4968</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <footer class="site-footer">
+      <div class="container">
+        
+
+        <div class="row">
+          <div class="col-md-4">
+            <h3 class="footer-heading mb-4 text-white">About</h3>
+            <p>Glearn is an interactive online platform that makes it faster and easier to find the online Professionals across the world.</p>
+            <p><a href="#" class="btn btn-primary pill  text-white px-4" style="background:#1589FF;">Read More</a></p>
+          </div>
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="footer-heading mb-4 text-white">Quick Menu</h3>
+                  <ul class="list-unstyled">
+                    <li><a routerLink="/aboutus">About</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Classes</a></li>
+                    <li><a href="#">Careers</a></li>
+                  </ul>
+              </div>
+              <div class="col-md-6">
+                <h3 class="footer-heading mb-4 text-white">Ministries</h3>
+                  <ul class="list-unstyled">
+                    <li><a href="#">Teaching</a></li>
+                    <li><a href="#">Astrology</a></li>
+                    <li><a href="#">Yoga Class</a></li>
+                    <li><a href="#">Sports</a></li>
+                    <li><a href="#">Gym</a></li>
+                    <li><a href="#">Cooking</a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="col-md-2">
+            <div class="col-md-12"><h3 class="footer-heading mb-4 text-white">Social Icons</h3></div>
+              <div class="col-md-12">
+                <p>
+                  <a href="http://www.facebook.com" class="pb-2 pr-2 pl-0"><span class="icon-facebook"></span></a>
+                  <a href="https://twitter.com/" class="p-2"><span class="icon-twitter"></span></a>
+                  <a href="https://www.instagram.com" class="p-2"><span class="icon-instagram"></span></a>
+                  <a href="https://www.pinterest.com/login/" class="p-2"><span class="icon-pinterest"></span></a>
+
+                </p>
+              </div>
+          </div>
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <p>
+      
+            Copyright &copy; <script data-cfasync="false" src=""></script><script>document.write(new Date().getFullYear());</script> All Rights Reserved | This site is made with <i class="icon-heart hrtcolr" aria-hidden="true"></i> by <a routerLink="/aboutus" target="_blank" >Glearn Team</a>
+      
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </footer>
+  </div>
+      <!--modal use for Signup -->
+
+  <!-- <div class="container">
+  <div class="modal" id="myModal" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+       <div class="remain">
+
+            <div class="container">
+                <form #f="ngForm" (ngSubmit)="f.form.valid && onFormSubmit(model)">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <div>
+                        <h1 style="text-align: center; color: black; margin-bottom: 25px;font-family: Poppins-Regular;"><b>Sign Up</b></h1>
+                    </div><br>
+                    <div class="form-group">
+                        <input type="text" id="inn" class="form-control" [(ngModel)]="model.name" [ngClass]="{'invalid-data': name.invalid && f.submitted, 'valid-data': name.valid && f.submitted}" required name="name" #name="ngModel" placeholder="User name" class="form-control" (keypress)="keyPress1($event)" autocomplete="nope">
+                        <div class="divv" *ngIf="(name.invalid && name.touched) ||(f.submitted &&name.invalid)">
+                            <span style="color: red;font-size: 12px;">Please Enter Name.</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="inn" [(ngModel)]="model.mobilenumber" (ngModelChange)="getdata($event)" [ngClass]="{'invalid-data': mobilenumber.invalid && f.submitted, 'valid-data': mobilenumber.valid && f.submitted}" required name="mobilenumber" #mobilenumber="ngModel" placeholder="Mobile number" class="form-control" (keypress)="keyPress2($event)" maxlength="10" autocomplete="nope">
+                        <div class="divv" *ngIf="(mobilenumber.invalid && mobilenumber.touched) ||(f.submitted &&mobilenumber.invalid)">
+                            <span style="color: red;font-size: 12px;">Please Enter Mobile Number.</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="inn" [(ngModel)]="model.emailid" [ngClass]="{'invalid-data': emailid.invalid && f.submitted, 'valid-data': emailid.valid && f.submitted}" required name="emailid" #emailid="ngModel" placeholder="Email address" class="form-control" autocomplete="nope" ngModel email="true">
+                        <div class="divv" *ngIf="(emailid.invalid && emailid.touched) ||(f.submitted &&emailid.invalid)">
+                            <span style="color: red;font-size: 12px;">Please Enter valid emailid.</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="password"  [(ngModel)]="model.password" [ngClass]="{'invalid-data': password.invalid && f.submitted, 'valid-data': password.valid && f.submitted}" required name="password" #password="ngModel" placeholder="New password" class="form-control" autocomplete="new-password">
+                        <div class="divv" *ngIf="(password.invalid&&password.touched) ||(f.submitted &&password.invalid)">
+                            <span style="color: red;font-size: 12px;">Please Enter password.</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="select-list">
+                            <select name="Account" class="form-control" id="Account" (change)="valuechange(model.Account)" [(ngModel)]="model.Account" #Account="ngModel" required>
+                                <option [ngValue]="undefined" hidden selected disabled="disabled"> Select Registration Type</option>
+                                <option value="Professional">Professional</option>
+                                <option value="User">User</option>
+                            </select>
+                            <div class="divv" *ngIf="(Account.invalid && Account.touched) ||(f.submitted &&Account.invalid)">
+                                <span style="color: red;font-size: 12px;">Account Type Required.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="select-list" *ngIf="show1">
+                        <div class="form-group">
+                            <select id="Profession" class="form-control" name="Profession" required="required" [(ngModel)]="model.proftype" #Profession="ngModel" required>
+                                <option [value]="undefined" hidden selected disabled="disabled"> --Select Profession--</option>
+                                <option *ngFor="let Profession of Professions" value={{Profession.values}}>
+                                    {{Profession.name}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="divv" *ngIf="(Profession.invalid && Profession.touched) ||(f.submitted &&Profession.invalid)">
+                            <span style="color: red;font-size: 12px;">Profession Required.</span>
+                        </div>
+                    </div>
+                    <div class="select-list" *ngIf="show2">
+                        <select id="User" name="User" required="required" [(ngModel)]="model.proftype" #User="ngModel" required>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <div class="row ">
+                            &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="otp" [(ngModel)]="model.otp" class="form-control otpp" (ngModelChange)="verifyotp($event)" style="width:360px;margin-right:17px;" id="otp" />
+                            <button type="button" class="btn btn-primary OtpButton" name="otp" id="submit" value="otp" (click)="sendotp()" >Send otp</button>
+                        </div>
+                    </div>
+                    <div class="form-submit">
+                        <input type="submit" name="submit" id="submit" class="submit" value="Get Start" />
+                    </div>
+                    <div class="form-group text-center ">
+                    <label class="lab1" style="text-align: center">Already Registered? <a routerLink="/registration/login" style="color:#4285f4;">Login</a> here.</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div> -->
+<!--modal ends-->
+
+<!-- modal use for signup popup  -->  
+    <div class="container">
+
+  <div class="modal" #signUpform >
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+       <div class="remain">
+
+            <div class="container">
+                <form #f="ngForm" (ngSubmit)="onFormSubmit(model)">
+                    <!-- <div class="top" style="background-image: url('assets/images/bg-01.jpg');"></div> -->
+                    <button type="button" class="close" (click)="closemodal();" style="margin-top: 10px;">&times;</button>
+                    <div>
+                        <h1 style="text-align: center; color: black; margin-bottom: 25px;font-family: Poppins-Regular;"><b>Sign Up</b></h1>
+                    </div><br>
+                    <div class="form-group">
+                        <input type="text" id="inn" class="form-control" [(ngModel)]="model.name" [ngClass]="{'invalid-data': name.invalid && f.submitted, 'valid-data': name.valid && f.submitted}" required name="name" #name="ngModel" placeholder="User name" class="form-control" (keypress)="keyPress1($event)" autocomplete="nope">
+                        <div class="divv" *ngIf="(name.invalid && name.touched) ||(f.submitted &&name.invalid)">
+                            <span style="color: red;font-size: 12px;">Please Enter Name.</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="inn" [(ngModel)]="model.mobilenumber" (ngModelChange)="getdata($event)" [ngClass]="{'invalid-data': mobilenumber.invalid && f.submitted, 'valid-data': mobilenumber.valid && f.submitted}" required name="mobilenumber" #mobilenumber="ngModel" placeholder="Mobile number" class="form-control" (keypress)="keyPress2($event)" maxlength="10" autocomplete="nope">
+                        <div class="divv" *ngIf="(mobilenumber.invalid && mobilenumber.touched) ||(f.submitted &&mobilenumber.invalid)">
+                            <span style="color: red;font-size: 12px;">Please Enter Mobile Number.</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="inn" [(ngModel)]="model.emailid" [ngClass]="{'invalid-data': emailid.invalid && f.submitted, 'valid-data': emailid.valid && f.submitted}" required name="emailid" #emailid="ngModel" placeholder="Email address" class="form-control" autocomplete="nope" ngModel email="true">
+                        <div class="divv" *ngIf="(emailid.invalid && emailid.touched) ||(f.submitted &&emailid.invalid)">
+                            <span style="color: red;font-size: 12px;">Please Enter valid emailid.</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="password"  [(ngModel)]="model.password" [ngClass]="{'invalid-data': password.invalid && f.submitted, 'valid-data': password.valid && f.submitted}" required name="password" #password="ngModel" placeholder="New password" class="form-control" autocomplete="new-password">
+                        <div class="divv" *ngIf="(password.invalid&&password.touched) ||(f.submitted &&password.invalid)">
+                            <span style="color: red;font-size: 12px;">Please Enter password.</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="select-list">
+                            <select name="Account" class="form-control" id="Account" (change)="valuechange(model.Account)" [(ngModel)]="model.Account" #Account="ngModel" required>
+                                <option [ngValue]="undefined" hidden selected disabled="disabled"> Select Registration Type</option>
+                                <option value="Professional">Professional</option>
+                                <option value="User">User</option>
+                            </select>
+                            <div class="divv" *ngIf="(Account.invalid && Account.touched) ||(f.submitted &&Account.invalid)">
+                                <span style="color: red;font-size: 12px;">Account Type Required.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="select-list" *ngIf="show1">
+                        <div class="form-group">
+                            <select id="Profession" class="form-control" name="Profession" required="required" [(ngModel)]="model.proftype" #Profession="ngModel" required>
+                                <option [value]="undefined" hidden selected disabled="disabled"> --Select Profession--</option>
+                                <option *ngFor="let Profession of Professions" value={{Profession.values}}>
+                                    {{Profession.name}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="divv" *ngIf="(Profession.invalid && Profession.touched) ||(f.submitted &&Profession.invalid)">
+                            <span style="color: red;font-size: 12px;">Profession Required.</span>
+                        </div>
+                    </div>
+                    <div class="select-list" *ngIf="show2">
+                        <select id="User" name="User" required="required" [(ngModel)]="model.proftype" #User="ngModel" required>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <div class="row ">
+                            &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="otp" [(ngModel)]="model.otp" class="form-control otpp" (ngModelChange)="verifyotp($event)" style="width:360px;margin-right:17px;" id="otp" />
+                            <button type="button" class="btn btn-primary OtpButton" name="otp" id="submit1" value="otp" (click)="sendotp()" >Send otp</button>
+                        </div>
+                    </div>
+                    <div class="form-submit">
+                        <input type="submit" name="submit" id="submit" class="btn btn-primary btn-lg" value="SIGN UP"/>
+                    </div>
+                    <div class="form-group text-center ">
+                    <label class="lab1" style="text-align: center">Already Registered? <a routerLink="/registration/login" style="color:#4285f4;">Login</a> here.</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+        <div class="modal" #signup aria-hidden="true" data-backdrop="static" tabindex="-1">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #337ab7; height:50px;">
+                <h4 class="modal-title" style="color: white;text-align: center;"></h4>
+            </div>
+            <div class="modal-body">
+                <h5 class="text-center">Successfully Registered... Please fill in further details</h5>
+            </div>
+            <div class="modal-footer" style="text-align: center;">
+                <button type="button" data-dismiss="modal" (click)="Redirect()">Ok</button>
+            </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  
+</div>
+
+<!-- Modal use for Action when withoutlogin accessing ---> 
+<div class="modal fade" id="myModal" #signinpopup role="dialog">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:#445090;height: 59px;">
+        <h3 class="modal-title" style="color: white;text-align: center;">Action Required</h3>
+      </div>
+      <div class="modal-body" style="font-weight: bold;font-size: 18px;text-align: center">
+        <p>Please signin/signup as user to continue booking</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" routerLink="/registration/login">ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- modal use for booking from landing page -->
+
+<div class="modal" #clientbooking2>
+  <div *ngIf="shows">
+  <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header"style="background-color: #445090;">
+          <img class="imgonlinebook" *ngIf="!profiledetails.profile_photo" src="assets/images/default-avatar-profile.jpg">
+          <img class="imgonlinebook" *ngIf="profiledetails.profile_photo" src="{{profiledetails.profile_photo}}">
+          <div class="popprofname">{{profiledetails.first_name}}</div><br>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <div class="modal-body">
+           <table class="table table-striped table-bordered">
+            <tbody>
+                <tr>
+                    <td> Area Of Expertise </td>
+                    <td>
+                       {{profiledetails.area_of_expertise}}
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td> Video : </td>
+                    <td >{{profiledetails.video_price}}/-</td>
+                </tr>
+                
+                <tr>
+                    <td> Experience : </td>
+                    <td >
+                        {{profiledetails.experience}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Languages :</td>
+                    <td >
+                        {{profiledetails.languages}}
+                    </td>
+                </tr>
+              
+                <tr>
+                    <td>Location :</td>
+                    <td >
+                        {{profiledetails.city}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Available Days :</td>
+                    <td >
+                        {{profiledetails.days}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Available Timings :</td>
+                    <td >
+                        {{profiledetails.mstime}} - {{profiledetails.metime}}
+                     & {{profiledetails.estime}} - {{profiledetails.eetime}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="modal-footer" style="border-top: none;">
+          <button class="btn btn-primary" (click)="booknow(profiledetails)"> Book Now </button>
+        </div> 
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal use for signup -->
+
+
+  <div class="modal" #proffdata>
+  <div class="modal-dialog" >
+      <div class="modal-content">
+        <div class="modal-header"style="background-color: #445090;">
+          <img class="imgonlinebook" *ngIf="!profiledetails?.profile_photo" src="assets/images/default-avatar-profile.jpg">
+          <img class="imgonlinebook" *ngIf="profiledetails?.profile_photo" src="{{profiledetails?.profile_photo}}">
+          <div class="popprofname">{{profiledetails?.first_name}}</div><br>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <div class="modal-body">
+        <p>{{profiledetails?.description}}</p>
+      </div>
+        <div class="modal-footer" style="border-top: none;">
+          <button class="btn btn-primary" (click)="closemodel()">OK</button>
+        </div> 
+        </div>
+      </div>
+    </div>
+
+
+    <ng-template #add>
+      <form>
+        
+      </form>
+
+    </ng-template>

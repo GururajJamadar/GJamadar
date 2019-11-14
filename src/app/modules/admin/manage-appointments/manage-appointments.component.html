@@ -1,0 +1,47 @@
+<app-admin-sidbar></app-admin-sidbar>
+<br><br>
+
+<div class="col-md-10 col-sm-10  offset-2 manageborrowerPage">
+        <h3><span id="regprof">Appointments</span></h3>
+    <div class="col-md-12">    
+    <div class="row">
+        <input [(ngModel)]="searchText1" type="text " class="searchtext " placeholder="Search.. " name="search">
+  
+
+ <div class="table-responsive flexcroll">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th style="background-color: #c5c5d2">Sl.No</th>
+          <th style="background-color: #c5c5d2">Client Name</th>
+          <th style="background-color: #c5c5d2">Client Mobile</th>
+          <th style="background-color: #c5c5d2">Astrologer Name</th>
+          <th style="background-color: #c5c5d2">Astrologer Mobile</th>
+          <th style="background-color: #c5c5d2">DOB</th>
+          <th style="background-color: #c5c5d2">TOB</th>
+          <th style="background-color: #c5c5d2">Status</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let appoint of appointdata | filter:searchText1">
+          <td>{{appoint.id}}</td>
+          <td>{{appoint.client_name}}</td>
+          <td>{{appoint.client_number}}</td>
+          <td>{{appoint.astrologer_name}}</td>
+          <td>{{appoint.astrologer_mobile_number}}</td>
+          <td>{{appoint.date_of_booking}}</td>
+          <td>{{appoint.time_of_booking}}</td>
+          <td>{{appoint.status}}</td>
+         
+     </tr>
+     <tr class="text-center">
+       <td colspan="8" *ngIf="(appointdata | filter:searchText1).length==0" style="color: #ff0052">No Records Found</td>
+     </tr>
+       
+      </tbody>
+    </table>
+  </div>
+  </div>
+</div>
+  </div>

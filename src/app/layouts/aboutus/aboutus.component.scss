@@ -1,0 +1,68 @@
+
+.faqcontact {
+    display: flex;
+    padding: 2px;
+    list-style: none;
+    float: right;
+    margin-top: 18px;
+    color: red;
+}
+.faqcontact li {
+    margin-right: 20px;
+   }
+.row{
+    margin-bottom: -56px;
+}
+.termsconditionpara h2 {
+    // font-family: "Gotham A", "Gotham B", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    // margin-left: 600px;
+
+}
+img{
+        margin-top: -190px;
+        width: 725px;
+        margin-left: 150px;
+        margin-bottom: -190px;
+}
+.termsconditionpara p {
+    // font-family: "Gotham A", "Gotham B", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+
+.termsconditionpara h3 {
+    // font-family: "Gotham A", "Gotham B", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-top: -0px;
+    margin-left: 10px;
+}
+.termsconditionpara ol li{
+    // font-family: "Gotham A", "Gotham B", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 2;
+} 
+@media only screen and (min-width:300px) and (max-width: 767px) {
+h2{
+    margin-left: 0px;
+}
+img{
+    width: 275px;
+    margin-left: -154px;
+    margin-top: -1100px;
+}
+.termsconditionpara h2{
+        margin-top: 150px;
+}
+.termsconditionpara h3{
+    margin-top: -10px;
+}
+}

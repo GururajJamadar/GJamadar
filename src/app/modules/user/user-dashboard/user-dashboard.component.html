@@ -1,0 +1,265 @@
+
+	<!-- <app-header></app-header> -->
+  <app-user-sidebar></app-user-sidebar> <br><br><br>
+  <div class="shift" class="container-fluid">
+    <div class="col-sm-2 col-md-6 col-lg-12  manager-textbox ">
+      <h3 style="text-align:center; color: #0d7cc2;"><span class="two">LEARNING CATEGORIES</span></h3>
+      <!-- <img src="assets/images/GLEARNLOGO.png" class="manager-portrait" style="height:43px"> -->
+    </div>
+    <div class="col-12 col-md-11 col-md-offset-1 col-sm-11 col-sm-offset-1" style="margin-top: 30px;" class="row" >
+      <div class="col-4 col-md-2 col-sm-2">
+        <a routerLink="/home/astro" class="inline_block_all">
+          <img src="assets/images/Astrology.jpeg" alt="New york" class="bigpic1">
+          <p style="margin-left: 61px;color: #007bff;">Astrology</p>
+        </a>
+      </div>
+      <div class="col-4 col-md-2 col-sm-2">
+        <a routerLink="/home/academic" class="inline_block_all">
+          <img src="assets/images/Online-Tutoring-Market Heytutor.jpg" alt="New york" class="bigpic1">
+          <p style="margin-left: 56px;color: #007bff;">Academics</p>
+        </a>
+      </div>
+      <div class="col-4 col-md-2 col-sm-2">
+        <a routerLink="/home/sports" class="inline_block_all">
+          <img src="assets/images/sports.jpg" alt="New york" class="bigpic1">
+          <p style="margin-left: 70px;color: #007bff;">Sports</p>
+        </a>
+      </div>
+      <div class="col-4 col-md-2 col-sm-2">
+        <a routerLink="/home/lifestyle" class="inline_block_all">
+          <img src="assets/images/gym.jpg" alt="New york" class="bigpic1">
+          <p style="margin-left:75px;color: #007bff;">Gym</p>
+        </a>
+      </div>
+      <div class="col-4 col-md-2 col-sm-2">
+        <a routerLink="/home/lifestyle" class="inline_block_all">
+          <img src="assets/images/yog.jpg" alt="New york" class="bigpic1">
+          <p style="margin-left:73px;color: #007bff;">Yoga</p>
+        </a>
+      </div>
+      <div class="col-4 col-md-2 col-sm-2">
+        <a routerLink="/home/cooking" class="inline_block_all">
+          <img src="assets/images/45.jpg" alt="New york" class="bigpic1">
+          <p style="margin-left: 65px;color: #007bff;">Cooking</p>
+        </a>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-12  manager-textbox" style="margin-top: 63px;">
+      <h3 style="text-align:center; color: #0d7cc2;"><span class="one">ONLINE PROFESSIONALS</span></h3>
+      <img src="assets/images/GLEARNLOGO.png" class="manager-portrait" style="height:43px">
+    </div>
+  </div>
+
+
+
+  <!-- -new code   -->
+  <div class="col-md-8 col-sm-2 col-8 offset-3 " style="margin-top: 60px; margin-bottom: 20px">
+  <div class="row">
+
+
+
+                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4" *ngFor="let obj of livedata" style="margin-bottom: 10px;">
+                            <div class="card">
+                                <div class="frontside">
+                                    <div class="card-body1 text-centerd" style="background-color: aliceblue;">
+                                        <div>
+                                            <div *ngIf="obj.profile_photo; else accounttype"><img class="imgonline" [src]="obj.profile_photo" (click)="proffDetails(obj)">
+                                            </div>
+                                            <div>
+                                                <ng-template #accounttype>
+                                                    <img class="imgonline" src="assets/images/account.png" (click)="proffDetails(obj)">
+                                                </ng-template>
+                                            </div>
+                                            <h4 class="card-title">{{obj.first_name}}</h4>
+                                            <h5 class="card-proff">{{obj.role}}</h5>
+                                            <div *ngIf="obj.finalatings" class="starrate">
+                                                <ngb-rating [(rate)]="obj.finalatings"></ngb-rating>
+                                                <p class="starrate">{{obj.rating}}</p>
+                                            </div>
+                                            <div *ngIf="!obj.finalatings" class="nonStar">
+                                                <ngb-rating [rate]="currentRate"></ngb-rating>
+                                            </div>
+                                            <hr>
+                                        </div>
+                                        <div>
+                                            <p><img class="expresp" src="assets/images/download.png">Exp:
+                                                {{obj.experience}} years</p>
+                                        </div>
+                                        <div>
+                                            <p><img class="vidprice" src="assets/images/images.png">{{obj.video_price}} /30min</p>
+                                        </div>
+                                        <div *ngIf="obj.is_online" (click)="booking10(obj)">
+                                            <div><img class="onlineimg" src="assets/images/call.png"><br>
+                                                <p class="online12"> ONLINE</p>
+                                            </div>
+                                        </div>
+                                        <div *ngIf="!obj.is_online" (click)="offlineBook()">
+                                            <div><img class="onlineimg" src="assets/images/call.png"><br>
+                                                <p class="offline"> OFFLINE</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+</div>
+</div>
+
+<div class="col-md-12 text-center" *ngIf="livedata.length == 0"><br>
+    <h4 style="color:red;">No record to be found</h4>
+</div>
+<!---new code end-->
+<!-- <div class="modal col-12 col-sm-12 col-md-12" id="myModal" #clientbooking2>
+    <div *ngIf="show1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #337ab7;">
+                    <img class="bigpic11" *ngIf="!profiledetails.profile_photo" src="assets/images/default-avatar-profile.jpg" style="height: 80px;width: 15%;border-radius: 85%; ">
+                    <img class="bigpic11" *ngIf="profiledetails.profile_photo" src="{{profiledetails.profile_photo}}" style="height: 80px;width: 15%;border-radius: 85%; ">
+                    <label class="astronamelabel"><b>{{profiledetails.first_name}}</b></label><br>
+                    <button type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="abovedes col-sm-12 col-md-12 col-xs-12" style="width: 70%;">
+                            <p>
+                                <label> Area Of Expertise :</label> {{profiledetails.area_of_expertise}}
+                            </p>
+                            <p class="showmoredetails">
+                                <label class="showmorelabel">Consultation Price : </label>
+                                <p>
+                                    <label class="labelprice"> Video :</label> Rs {{profiledetails.video_price}}/-
+                                </p>
+                                <p class="showmoredetails">
+                                    <label class="showmorelabel">Experience :</label> {{profiledetails.experience}}
+                                </p>
+                                <p>
+                                    <label class="showmorelabel">Reviews :</label>{{profiledetails.reviews}}
+                                    <div class="reviewername"></div>
+                                    <p class="showmoredetails">
+                                        <label class="showmorelabel">Languages :</label> {{profiledetails.languages}}
+                                    </p>
+                                    <p class="showmoredetails">
+                                        <label class="showmorelabel">Location :</label> {{profiledetails.city}}
+                                    </p>
+                                    <p class="showmoredetails">
+                                        <label class="showmorelabel">Available Days :</label> {{profiledetails.days}}
+                                    </p>
+                                    <p class="showmoredetails">
+                                        <label class="showmorelabel">Available Timings :</label> {{profiledetails.mstime}} - {{profiledetails.metime}}
+                                        & {{profiledetails.estime}} - {{profiledetails.eetime}}
+                                    </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="border-top: none;">
+                    <div class="col-md-12 col-xs-12 col-sm-12">
+                        <div class="col-md-12 col-xs-12 col-sm-12 booknow" (click)="booknow(profiledetails)"> Book Now </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<div #clientbooking2 class="modal">
+    <div *ngIf="show1" class="col-md-12 col-sm-12 col-lg-12">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #337ab7;">
+                    <span *ngIf !="profiledetails.profile_photo">
+                        <img class="preview-img" src="assets/images/account.png" alt="Preview Image" width="60" height="60" /></span>
+                    <span *ngIf="profiledetails.profile_photo"><img src={{profiledetails.profile_photo}} class="preview-img" alt="Preview Image" width="100" height="100" style="border-radius: 100%;"></span>
+                    <label class="popprofname">{{profiledetails.first_name}}</label><br>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-striped table-bordered">
+                        <tbody>
+                            <tr>
+                                <td> Area Of Expertise </td>
+                                <td>
+                                    {{profiledetails.area_of_expertise}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> Video : </td>
+                                <td>{{profiledetails.video_price}}/-</td>
+                            </tr>
+                            <tr>
+                                <td> Experience : </td>
+                                <td>
+                                    {{profiledetails.experience}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Languages :</td>
+                                <td>
+                                    {{profiledetails.languages}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Location :</td>
+                                <td>
+                                    {{profiledetails.city}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Available Days :</td>
+                                <td>
+                                    {{profiledetails.days}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Available Timings :</td>
+                                <td>
+                                    {{profiledetails.mstime}} - {{profiledetails.metime}}
+                                    & {{profiledetails.estime}} - {{profiledetails.eetime}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer" style="border-top: none;">
+                    <div class="col-md-12 col-xs-12 col-sm-12">
+                        <div class="col-md-12 col-xs-12 col-sm-12 booknow" (click)="booknow(profiledetails)"> Book Now </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" #rescheduleappointment>
+    <div class="modal-dialog modal-md">
+        <div class="modal-content" style="text-align: center;">
+            <div class="modal-header" style="background-color: #337ab7; height:50px;">
+                <h4 class="modal-title" style="color: white;">Reschedule Appointment</h4>
+            </div>
+            <div class="modal-body">
+                <h4 class="text-center">Your appointment is expired, click below button to add money to your wallet</h4>
+            </div>
+            <div class="modal-footer" style="text-align: center;">
+                <button type="button" data-dismiss="modal" class="reshedu" (click)="reschedule_appoint1(popdata)">Move to Wallet</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" #reschedule>
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #337ab7; height:50px;">
+                <h4 class="modal-title" style="color: white;text-align: center;">Success</h4>
+            </div>
+            <div class="modal-body">
+                <h4 class="text-center">Amount successfully added to wallet, you can use it while booking</h4>
+            </div>
+            <div class="modal-footer" style="text-align: center;">
+                <button type="button" data-dismiss="modal" class="reshedu1">ok</button>
+            </div>
+        </div>
+    </div>
+</div>

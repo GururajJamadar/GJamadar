@@ -1,0 +1,56 @@
+
+<br>
+<div class="headers">
+    <ul class="listimages">
+        <li><a href = "">
+            <img src="assets/images/GLEARNLOGO.png" class="imagess">
+        </a>
+        </li>
+    </ul>
+
+
+    <ul class="listimages1" id="listopen">
+        <li *ngIf="current_user==0">
+           <a class="header"
+             [routerLink]="['/registration/login/']" (click)="closeMenu();" >
+               <i class="fas fa-sign-in-alt"></i>&nbsp;Login</a></li>
+        <li class="header" *ngIf="current_user==0">
+            <a class="header"
+                 (click)="closeMenu('Signup');" >
+                <i class="fas fa-user-plus"></i>&nbsp;Signup</a>
+        </li>
+        <li class="header" *ngIf="current_user!=0"> <a class="header" (click)="logoutuser(data)"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
+        </li>
+    </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

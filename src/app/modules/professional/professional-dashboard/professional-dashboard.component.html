@@ -1,0 +1,102 @@
+<app-professional-sidebar></app-professional-sidebar><br><br><br>
+<div class="d-flex justify-content-start" id="calhead"><h4>Calendar</h4></div>
+<div class="col-9 col-sm-9 col-md-9 col-lg-9 row" id="homecont">
+
+	
+	<div class="col-3 col-sm-3 col-md-3 col-lg-3" id="dateeee">
+		<div class="cale">
+			<mat-form-field>
+			
+				<input matInput [matDatepicker]="picker" placeholder="Choose a date">
+				<mat-datepicker-toggle matSuffix [for]="picker">
+				</mat-datepicker-toggle>
+				<mat-datepicker #picker></mat-datepicker>
+
+				<div class="calendar">
+					<mat-calendar [selected]="selectedDate" (selectedChange)="onSelect($event)"></mat-calendar>
+				</div>
+			</mat-form-field>
+
+		</div>
+
+	</div>	
+
+
+	<div class="col-8 col-sm-8 col-md-8 col-lg-8 paca" style="float:right; padding-inline-end: 25px;">
+		<!-- <table> -->
+			<table class="table table-bordered table-striped tablestyle">
+
+				<thead>
+
+					<tr style="text-align: center;">
+						<th colspan="4">Pending Appointments</th>
+					</tr>
+
+				</thead>
+
+				<thead *ngIf="pendinglist">
+
+					<tr>
+						<th>Booking Date</th>
+						<th>Booking Time</th>
+						<th>Client Name</th>
+						<th>Client Mobile</th>
+					</tr>
+
+				</thead>
+				
+				<tbody>
+
+					<tr *ngFor="let data of pendinglist">
+						<td>{{data.date_of_booking}}</td>
+						<td>{{data.time_of_booking}}</td>
+						<td>{{data.client_name}}</td>
+						<td>{{data.client_number}}</td>
+					</tr>
+
+					<tr *ngIf="!pendinglist">
+						<td colspan="3">You don't have any appointments right now.</td>
+					</tr>
+
+				</tbody>
+
+			</table>
+
+			<table class="table table-bordered table-striped tablestyle">
+				
+				<thead>
+
+					<tr style="text-align: center;" >
+						<th colspan="5">Completed Appointments</th>
+					</tr>
+
+				</thead>
+
+				<thead >
+					
+					<tr>
+						<th>Booking Date</th>
+						<th>Booking Time</th>
+						<th>Client Name</th>
+						<th>Client Mobile</th>
+					</tr>
+
+				</thead>
+
+				<tbody  >
+
+					<tr *ngFor="let data of completedlist">
+						<td>{{data.date_of_booking}}</td>
+						<td>{{data.time_of_booking}}</td>
+						<td>{{data.client_name}}</td>
+						<td>{{data.client_number}}</td>
+					</tr>
+
+					<tr *ngIf="!completedlist">
+						<td colspan="3">No Appointments found to be completed.</td>
+					</tr>
+
+				</tbody>
+			</table>			
+		</div>
+	</div>

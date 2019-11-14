@@ -1,0 +1,245 @@
+<app-header></app-header>
+<br><br>
+<div class="container-fluid">
+    <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12 full">
+        <div class="row">
+            <div class="col-md-4 firstForm">
+                <form role="form" class="my-form" (ngSubmit)="employee1Form.form.valid && academicsignup(employee1Form)" #employee1Form="ngForm" novalidate>
+                    <fieldset>
+                        <div class="form-bottom">
+                            <h4><span><i class="fas fa-address-book" aria-hidden="true"></i></span>&nbsp;Current Address Details</h4>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <mat-form-field class="full-width">
+                                        <mat-label>State</mat-label>
+                                        <mat-select name="state" id="state" (ngModelChange)="changeCountry($event)" [(ngModel)]="employee1Form.state" #state="ngModel" required>
+                                            <mat-option *ngFor="let count of countryList" value={{count.name}}>
+                                                {{count.name}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-5">
+                                    <mat-form-field class="full-width">
+                                        <mat-label>District</mat-label>
+                                        <mat-select name="district" id="district" [(ngModel)]="employee1Form.district" #district="ngModel" required>
+                                            <mat-option *ngFor="let city of cities" value={{city}}>
+                                                {{city}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <mat-form-field class="full-width">
+                                        <input matInput name="city" id="city" placeholder="Your city" [(ngModel)]="employee1Form.city" #city="ngModel" required (keypress)="keyPress1($event)">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <p class="para">Enter working Days and Timings</p>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <mat-form-field class="full-width">
+                                        <mat-label>Select Days</mat-label>
+                                        <mat-select [(ngModel)]="days" multiple name="type_list" required>
+                                            <mat-option *ngFor="let role of ddays" required [value]="role.text"> {{role.text}}</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <!-- <br> -->
+                            <p class="para">Morning Timings</p>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <mat-form-field class="full-width">
+                                        <mat-label>From</mat-label>
+                                        <mat-select [(ngModel)]="employee1Form.mstime" id="sstart_time" name="mstime" required>
+                                            <mat-option *ngFor="let value of mstime" [value]="value">{{value}}</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-5">
+                                    <mat-form-field class="full-width">
+                                        <mat-label>To</mat-label>
+                                        <mat-select [(ngModel)]="employee1Form.metime" id="eend_time" name="metime" required>
+                                            <mat-option *ngFor="let value of metime" [value]="value">{{value}}</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <p class="para">Afternoon Timings</p>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <mat-form-field class="full-width">
+                                        <mat-label>From</mat-label>
+                                        <mat-select [(ngModel)]="employee1Form.estime" id="ss_time" name="estime" required>
+                                            <mat-option *ngFor="let value of estime" [value]="value">{{value}}</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-5">
+                                    <mat-form-field class="full-width">
+                                        <mat-label>To</mat-label>
+                                        <mat-select [(ngModel)]="employee1Form.eetime" id="ee_time" name="eetime" required>
+                                            <mat-option *ngFor="let value of eetime" [value]="value">{{value}}</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <button type="submit" mat-raised-button color="primary">Next</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <!-- Form 2 start here -->
+            <div class="col-md-8">
+                <form role="form" class="my-form" #employee2Form="ngForm" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4><span><i class="fa fa-book" aria-hidden="true"></i></span>&nbsp;Academics Details</h4>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <mat-form-field class="full-width">
+                                        <mat-label>
+                                            Primary</mat-label>
+                                        <mat-select [(ngModel)]="employee2Form.primary" name="primary" #primary="ngModel" id="pprimary" multiple required>
+                                            <mat-option *ngFor="let prim of psubjects" [value]="prim">{{prim}}</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-5">
+                                    <mat-form-field class="full-width">
+                                        <mat-label>Secondary</mat-label>
+                                        <mat-select [(ngModel)]="employee2Form.secondary" name="secondary" #secondary="ngModel" id="ssecondary" multiple required>
+                                            <mat-option *ngFor="let second of ssubjects" [value]="second">{{second}}</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="frmcntrl1">
+                                        <mat-form-field class="full-width">
+                                            <mat-label>Undergraduate</mat-label>
+                                            <mat-select [(ngModel)]="employee2Form.undergradua" #undergradua="ngModel" name="undergradua" id="uundergradua" (selectionChange)="underChange($event)" required>
+                                                <mat-option *ngFor="let count of Undergraduates" [value]="count">
+                                                    {{count.undergraduate}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="frmcntrl1">
+                                        <mat-form-field class="full-width">
+                                            <mat-label>Streams</mat-label>
+                                            <mat-select [(ngModel)]="employee2Form.ugstream" #ugstream="ngModel" name="ugstream" id="sstrea" (selectionChange)="streamsChange($event)" required>
+                                                <mat-option value=" " [disabled]=" ">---Select---</mat-option>
+                                                <mat-option *ngFor="let count1 of streams" [value]="count1">
+                                                    {{count1.name}} </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class=" col-md-10">
+                                    <div class="frmcntrl1">
+                                        <mat-form-field class="full-width">
+                                            <mat-label>Subjects</mat-label>
+                                            <mat-select [(ngModel)]="employee2Form.ugsubject" name="ugsubject" #ugsubject="ngModel" id="ssubjec" multiple required>
+                                                <mat-option *ngFor="let sub of subjects" [value]="sub">{{sub}}</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="frmcntrl1">
+                                        <mat-form-field class="full-width">
+                                            <mat-label>Postgraduate</mat-label>
+                                            <mat-select [(ngModel)]="employee2Form.postgraduate" #postgraduate="ngModel" name="postgraduate" id="ppostgraduate" (selectionChange)="postChange($event)" required>
+                                                <mat-option *ngFor="let postgr of Postgraduates" [value]="postgr">
+                                                    {{postgr.postgraduate}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="frmcntrl1">
+                                        <mat-form-field class="full-width">
+                                            <mat-label>Streams</mat-label>
+                                            <mat-select [(ngModel)]="employee2Form.pgstream" #pgstream="ngModel" name="pgstream" id="sstrea1" (selectionChange)="strChange($event)" required>
+                                                <mat-option *ngFor="let str of streams1" [value]="str">
+                                                    {{str.name}} </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="frmcntrl1">
+                                        <mat-form-field class="full-width">
+                                            <mat-label>Subjects</mat-label>
+                                            <mat-select [(ngModel)]="employee2Form.pgsubject" name="pgsubject" #pgsubject="ngModel" id="ssubjec1" multiple required>
+                                                <mat-option *ngFor="let sub1 of subjects1" [value]="sub1">{{sub1}}</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                &nbsp;&nbsp;<p class="para">Service Mode</p>
+                                &nbsp;&nbsp;&nbsp;<mat-checkbox type="checkbox" name="video_call" [(ngModel)]="employee2Form.video_call" id="chkhtml" #video_call="ngModel" value="video_call" required>VideoCall</mat-checkbox>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Enter Experince Details</h5>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <mat-form-field class="full-width">
+                                        <input matInput [matDatepicker]="picker" [(ngModel)]="employee2Form.yop" name="yop" placeholder="Choose a date" required>
+                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-5">
+                                    <mat-form-field>
+                                        <input matInput placeholder="Year of Experince" name="experience" [ngModel]="employee2Form.experience" #experience="ngModel" (keypress)="keyPress($event)" minlength="1" maxlength="2" required>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <mat-form-field class="full-width">
+                                        <input matInput placeholder="Aadhar Number" name="aadhar_number" [ngModel]="employee2Form.aadhar_number" #aadhar_number="ngModel" (keypress)="keyPress($event)" minlength="12" maxlength="12" required>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-5">
+                                    <mat-form-field class="full-width">
+                                        <mat-label>Select the
+                                            Languages</mat-label>
+                                        <mat-select [(ngModel)]="lang_roles" multiple name="type_list" required>
+                                            <mat-option *ngFor="let role of llang_roles" required [value]="role"> {{role}}</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="file" id="labels">Upload profile photo:</label>
+                                &nbsp;<input type="file" id="file" (change)="selectProfilePic1($event)" required>
+                                <br>
+                            </div>
+                            <br>
+                            <button type="submit" mat-raised-button color="primary" (click)="academicsignup1(employee2Form)" [disabled]="!employee1Form.form.valid">Confirm</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

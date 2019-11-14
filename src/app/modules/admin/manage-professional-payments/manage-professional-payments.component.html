@@ -1,0 +1,39 @@
+<app-admin-sidbar></app-admin-sidbar>
+<br><br>
+<div class="col-md-10 col-sm-10 col-lg-10 offset-2 registerastrologers">
+    <h3><span id="set">Professional PayInfo</span></h3>
+    <div class="col-md-12">
+    <div class="row">
+        <input ng-model="searchText2" type="text" class="searchtext
+" placeholder="Search.." name="searchText2" ng-change="demofunc2(searchText2)">
+        <div class="table-responsive flexcroll" id="disbursementMargin" style="width: 100%;">
+            <table class="table table-bordered table-striped ">
+                <thead id="clientprofile">
+                    <tr class="tableTextCentre">
+                        <th style="background-color: #c5c5d2">Id</th>
+                        <th style="background-color: #c5c5d2">Astrologer Name</th>
+                        <th style="background-color: #c5c5d2">Astrologer Mobile</th>
+                        <th style="background-color: #c5c5d2">City</th>
+                        <th style="background-color: #c5c5d2">State</th>
+                    </tr>
+                </thead>
+                <tbody id="myduesbody" >
+                    <!-- <tr class="tableTextCenter">
+                        <td ng-click="astropay(data)">{{data.id}}</td>
+                        <td ng-click="astropay(data)">{{data.astrologer_name}}</td>
+                        <td ng-click="astropay(data)">{{data.astrologer_mobile_number}}</td>
+                        <td ng-click="astropay(data)">{{data.city}}</td>
+                        <td ng-click="astropay(data)">{{data.state}}</td>
+                    </tr> -->
+                </tbody>
+                <tbody ng-show="payments.length==0">
+                    <tr>
+                        <th colspan="21" class="text-center" id="spanmessage">No records found</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+

@@ -1,0 +1,87 @@
+<app-header></app-header>
+<div class="col-sm-12 newsiden d-block d-md-none ">
+  <div id="mySidenav" class="sidenav" style="margin-top:22px; ">
+  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()" style="color: black;">&times;</a>
+  <div class="row">
+        <div class="col-md-12 col-sm-12 col-12 box-grid" data-toggle="tooltip" data-placement="right" title="home" (click)="goHome()" style="color:white"><i class="fa fa-home"></i>
+      <p style="color: white">Home </p>
+    </div>
+    <div class="col-md-12 col-sm-12 col-12 box-grid" data-toggle="tooltip" data-placement="right" (click)="manageProf()" style="color:white"><i class="fa fa-book"></i>
+      <p style="color: white">Manage Professionals</p>
+    </div>
+    <div class="col-md-12 col-sm-12 col-12 box-grid" data-toggle="tooltip" data-placement="right"  (click)="regProf()" style="color:white" href="uiid"><i class="fa fa-user-plus"></i>
+      <p style="color: white">Registered Professionals</p>
+    </div>
+    <div class="col-md-12 col-sm-12 col-12 box-grid" data-toggle="tooltip" data-placement="right" (click)="manageClients()" style="color:white"><i class="fa fa-cogs"></i>
+      <p style="color: white">Manage Clients</p>
+    </div>
+    <div class="col-md-12 col-12 col-sm-12 box-grid" data-toggle="tooltip" data-placement="right"  (click)="manageAppointment()" style="color:white">
+   <i class="fa fa-sitemap"></i>
+      <p>Manage Appointments</p>
+    </div>
+
+<!-- <div class="col-md-12 col-sm-12 col-12 box-grid" data-toggle="tooltip" data-placement="right" (click)="payInfo()" style="color:white"><i class="fa fa-credit-card"></i>
+      <p style="color: white">Payment Info </p>
+    </div> -->
+    <div class="col-md-12 col-sm-12 col-12 box-grid" data-toggle="tooltip" data-placement="right" (click)="disapproved()" style="color:white"><i class="fa fa-thumbs-down"></i>
+      <p style="color: white">Disapproved Profession</p>
+    </div>
+    <div class="col-md-12 col-sm-12 col-12 box-grid" data-toggle="tooltip" data-placement="right" (click)="clientpayInfo()" style="color:white"><i class="fa fa-dollar-sign"></i>
+      <p style="color: white">Client PayInfo</p>
+    </div>
+    <!-- <div class="col-md-12 col-sm-12 col-12 box-grid" data-toggle="tooltip" data-placement="right" (click)="profPayInfo()" style="color:white"><i class="fa fa-dollar-sign"></i>
+      <p style="color: white">Professionals PayInfo</p>
+    </div> -->
+   
+  </div>
+</div>
+<span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776;</span>
+</div>
+
+
+
+
+<div id="wrapper">
+  <aside id="sidebar-wrapper">
+    <div class="sidebar-brand">
+      <h2>Admin Dashboard</h2>
+    </div>
+    <ul class="sidebar-nav">
+       <li>
+        <a (click)="goHome()"><i class="fa fa-home"></i>&nbsp;Home</a>
+      </li>
+      <li>
+        <a (click)="manageProf()"><i class="fa fa-book"></i>&nbsp;Manage Professionals</a>
+      </li>
+      <li>
+        <a (click)="regProf()"><i class="fa fa-user-plus"></i>&nbsp;Registered Professionals</a>
+      </li>
+      <li>
+        <a (click)="manageClients()"><i class="fa fa-cogs"></i>&nbsp;Manage Clients</a>
+      </li>
+      <li>
+        <a (click)="manageAppointment()"> <i class="fa fa-sitemap"></i>&nbsp;Manage Appointments</a>
+      </li>
+    <!--   <li>
+        <a (click)="payInfo()"> <i class="fa fa-credit-card"></i>&nbsp;Payment Info</a>
+      </li> -->
+      <li>
+        <a (click)="disapproved()"> <i class="fa fa-thumbs-down"></i>&nbsp;Disapproved Profession</a>
+      </li>
+      <li>
+        <a (click)="clientpayInfo()"> <i class="fa fa-dollar-sign"></i>&nbsp;Client PayInfo</a>
+      </li>
+      <!--  <li>
+        <a (click)="profPayInfo()"> <i class="fa fa-dollar-sign"></i>&nbsp;Professionals PayInfo</a>
+      </li> -->
+     
+    </ul>
+  </aside>
+  <section id="content-wrapper">
+    <div class="row">
+      <div class="col-lg-12">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </section>
+</div>

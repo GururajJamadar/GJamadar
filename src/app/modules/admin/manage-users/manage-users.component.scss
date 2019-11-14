@@ -1,0 +1,44 @@
+.searchtext {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    margin-bottom: 10px;
+    margin-top: 8px;
+    background: whitesmoke;
+    color: brown;
+}
+
+.searchtext:focus {
+    width: 30%;
+}
+
+.search16{
+    margin-left: 277px;
+}
+#regprof{
+ 
+    font-weight: 600;
+    color: #3a4563;
+     margin-left:300px; 
+}
+@media only screen and (min-width:320px) and (max-width: 767px) {
+.manageborrowerPage{
+    margin-top: -75px;
+    margin-left: 0px;
+}
+
+#regprof{
+    margin-left: 0px;
+    font-size:21px;
+    font-weight:600px;
+}
+
+    }

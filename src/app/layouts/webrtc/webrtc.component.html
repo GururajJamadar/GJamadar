@@ -1,0 +1,53 @@
+<app-header></app-header>
+<br><br>
+  <h1 class="timeout"><span id='timerElement'></span></h1>
+  <div id="main" style="margin-top: 70px">
+  <div id="remoteVideo" class="remotevideo"></div>
+  <div id="localVideo" class="localvideo"></div>
+  </div>
+  <br>
+
+<div  style="text-align:center;">
+  <button class="btn btn-primary" (click)="callend()"> Stop </button>
+  <button class="btn btn-primary" (click)="startRecording1()"> Record </button>
+  <button class="btn btn-primary" style="margin-left: 10px;" (click)="download1()"> Download</button>
+</div>
+<div class="modal fade" #review>
+<div class="modal-dialog modal-md">
+<div class="modal-content">
+        <div class="modal-header" style="background-color: #61b1ff; height:50px;">
+             <h3 class="text-center" style="margin-top: -5px;
+              color: #eee;"><b class="glyphicon glyphicon-thumbs-up"></b> Thank You</h3>
+        </div>
+        <div class="modal-body">
+          <h4 class="text-center">Please provide your rating</h4>
+          <ngb-rating [(ngModel)]="Client_Rating" style="margin-left: 211px;
+          font-size: 31px;color: #337ab7;"></ngb-rating>
+          <h4 class="text-center">Leave your feedback</h4>
+          <textarea cols="30" rows="4" [(ngModel)] = "str" placeholder="optional.." style="width: 413px;
+          margin-left: 82px;
+          height: 86px;"></textarea>
+        </div>
+         <div class="modal-footer" style="text-align: center;">
+        <button type="button" data-dismiss="modal" class="rating" (click)="feedback(Client_Rating,str)">submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" data-backdrop="static" data-keyboard="false" #appoint >
+<div class="modal-dialog modal-md">
+<div class="modal-content">
+        <div class="modal-header" style="background-color: #61b1ff; height:50px;">
+             <h3 class="text-center" style="margin-top: -5px;
+                              color: #eee;"><b class="glyphicon glyphicon-thumbs-up"></b> Thank You</h3>
+        </div>
+        <div class="modal-body">
+          <h4 class="text-center">Appoinment completed</h4>
+        </div>
+        <div class="modal-footer" style="text-align: center;">
+        <button type="button" data-dismiss="modal" class="rating" (click)="movetoratings(this.OrderIdNumber)">ok</button>
+        </div>
+      </div>
+    </div>
+  </div>

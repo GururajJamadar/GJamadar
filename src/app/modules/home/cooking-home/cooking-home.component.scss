@@ -1,0 +1,348 @@
+
+.row{
+  margin-top: -29px;
+}
+
+
+.companiesdiv {
+  font-weight: bold;
+  padding: 2vh;
+  margin-left: 130px;
+}
+
+#mobile-home {
+  margin-left: 30px;
+ 
+}
+
+#mobile-filter {
+  background-color: white;
+  margin-top: 40px;
+}
+
+.home-side-menu {
+  border: 3px solid #337ab7;
+  padding: 8px;
+  text-align: center;
+  margin-top: 28px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+
+.astrolabel {
+  /*margin-top: 50px;*/
+  border-bottom: 4px solid #337ab7;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.bigpic {
+  height: 19vh;
+  width: 67%;
+  margin-left: 150px;
+  border-radius: 85%;
+}
+
+.modal-content {
+  background-color: rgb(250, 250, 250);
+}
+
+.reviewername {
+  font-style: italic;
+  font-family: cursive;
+  color: #337ab7;
+  font-weight: bolder;
+  font-size: 18px;
+  margin-left: 2vh;
+}
+
+.labelprice {
+  margin-left: 1vh;
+  color: red;
+}
+
+.showmorelabel {
+  color: black;
+  margin-left: 1vh;
+  margin-top: 1vh;
+}
+
+.showmoredetails {
+  margin-top: 1vh;
+}
+
+.booknow {
+  border: 1px solid;
+  cursor: pointer;
+  text-align: center;
+  cursor: pointer;
+  background-color: #347ab7;
+  color: white;
+  padding: 9px;
+  float: right;
+  box-shadow: -20px 1px 20px 1px #bfabab;
+  margin-top: 5vh;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+}
+
+.astronamelabel {
+  text-transform: capitalize;
+  font-size: 22px;
+  color: #347ab7;
+}
+
+.astroclas {
+  font-size: 20px;
+  font-weight: normal;
+  margin-top: 30px;
+}
+
+
+#chefs{
+  border-radius: 10px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 640px){
+  .regsteps{
+    margin-left:-18px;
+    height: 12vh;
+    margin-left: -42px;
+    width: 330px;
+  }
+  #mobile-filter{
+    background-color: white;
+    margin-top: 0px;
+    margin-left: 27px;
+    margin-right: 27px;
+  }
+  .regstepsglyph{
+    border-style: solid;
+    border-color: #337ab7;
+    border-radius: 44px;
+    width: 56px;
+    height: 31px;
+    float: left;
+    margin-left: 10px;
+    font-size: 11px;
+  }
+  #signup{
+    margin-left: 0px;
+    margin-top: 7px;
+  }
+  #book{
+    margin-left: 15px;
+    margin-top: 7px;
+  }
+  #make{
+    margin-left: 149px;
+    margin-top: -30px;
+  }
+  #video{
+    margin-left: 225px;
+    margin-top: -31px;
+  }
+  #chefs{
+    margin-left: -42px;
+    width: 330px;
+  }
+}
+
+
+@media screen and (min-width:500px){
+
+#Cuisines1{
+  display:none;
+}
+
+#Cuisines2{
+  display:block;
+}
+#State1{
+  display:none;
+}
+
+#State2{
+  display:block;
+}
+#Price1{
+  display:none;
+}
+
+#Price2{
+  display:block;
+}
+
+
+}
+
+
+@media screen and (max-width:500px){
+  #Cuisines2{
+    display:none;
+  }
+  #State2{
+    display:none;
+  }
+  #Price2{
+    display:none;
+  }
+  }
+
+
+
+
+  
+#team {
+    background: #eee !important;
+}
+
+.top h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 25px;
+    font-family: Poppins-Regular;
+}
+
+.top {
+    height: 175px;
+    z-index: 1;
+}
+
+.top::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(54, 84, 99, .7);
+}
+
+h4 {
+    margin-top: -79px;
+    margin-left: 60px;
+    font-family: serif;
+}
+
+h6 {
+    margin-top: -69px;
+    margin-left: 60px;
+}
+
+#team .card {
+    border: none;
+    background: #ffffff;
+}
+
+.starrate {
+    color: #337ab7;
+    left: 17px;
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+.nonStar {
+    color: #337ab7;
+    left: 17px;
+    font-size: 10px;
+    margin-left: 67px;
+}
+
+.card {
+    height: 200px;
+    /*width:250px;*/
+    margin-top: 15px;
+}
+
+.frontside {
+    min-height: auto;
+}
+
+hr {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.frontside .card .card-title,
+    {
+    color: #007b5e !important;
+}
+
+.card-proff {
+    color: #3ca0deb8 !important;
+    margin-left: 60px;
+}
+
+.frontside .card .card-body1 {
+    border-radius: 50%;
+}
+
+.imgonline {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-left: -183px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.text-centerd {
+    text-align: center !important;
+}
+
+.expresp {
+    margin-left: -145px;
+    height: auto;
+    width: 10%;
+    opacity: .9;
+}
+
+.vidprice {
+    height: auto;
+    margin-left: -155px;
+    width: 3%;
+    opacity: .8;
+}
+
+.onlineimg {
+    height: auto;
+    margin-left: 211px;
+    margin-top: -178px;
+    width: 34px;
+    opacity: .8;
+}
+
+.onlineimg:hover {
+    width: 45px;
+    cursor: pointer;
+}
+
+.online12 {
+    margin-top: -73px;
+    margin-left: 210px;
+    color: green;
+}
+
+.offline {
+    margin-top: -73px;
+    margin-left: 210px;
+    color: red;
+}
+
+.popprofname {
+    font-family: Georgia;
+    font-weight: bold;
+    color: white;
+    margin-top: 24px;
+    margin-left: 10px;
+
+}
+  

@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="col-md-12">
+  <div class="offset-md-4 col-md-4 box-outline">
+    <div class="row">
+      <form name="form" class="css-form" (ngSubmit)="verifyotpFrm.form.valid && verifyOtp(Userotp)" #verifyotpFrm="ngForm" novalidate>
+        <div class="col-md-12 reset">
+          <h1>First, let's find your account</h1>
+          <div class="col-md-12 reset-text">
+            <p>Please enter the OTP to change your Password</p>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="userotp" [(ngModel)]="Userotp" #userotp="ngModel" minlength=6 maxlength=6 (keypress)="keyPress($event)" placeholder="Enter OTP" required />
+            <div *ngIf="verifyotpFrm.submitted && userotp.invalid" class="text-danger">
+              <div *ngIf="userotp.errors.required">OTP is required</div>
+            </div>
+            <div *ngIf="error_message" class="text-danger">{{error_message}}</div>
+          </div>
+          <div class="col-md-12 text-center ">
+            <button class="btn btn-primary btn-md submitbutton" type="submit">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

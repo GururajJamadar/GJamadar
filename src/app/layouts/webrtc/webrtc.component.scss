@@ -1,0 +1,27 @@
+#main { 
+    width: 800px;
+    margin: 0 auto;   
+}
+.btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    margin-left: 11px;
+    width: 96px;
+}
+.rating{
+	background-color: #337ab7;
+	width: 88px;
+    padding: 7px;
+    border-radius: 7px;
+}
+#remoteVideo{
+    float: left;
+    margin-left: -250px;
+    width: 20%;
+}
+
+#localVideo{
+    margin-left: 425px;
+    width: 20%;
+}

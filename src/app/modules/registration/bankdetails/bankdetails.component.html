@@ -1,0 +1,35 @@
+<app-header></app-header>
+<div class="container-fluid bg-img" style=" background-image: url('assets/images/Bank-Details.jpg');">
+  <form #employee3Form="ngForm" (ngSubmit)="loginUser(employee3Form)">
+    <br>
+    <div class=" text-center division2">
+      <h4 class="login-heading">Enter Your Bank Details</h4>
+      <div style="margin-top:15px;">
+        <div>
+          <label class="reg">Bank Account Name
+          </label><br>
+          <input class="frmcntrl" [(ngModel)]="employee3Form.bank_name" name="bank_name" type="text" id="bbank_name" (keypress)="keyPress1($event)">
+        </div>
+        <div>
+          <label class="reg">Bank Account Number
+          </label><br>
+          <input class="frmcntrl" [(ngModel)]="employee3Form.bank_accountnumber" name="bank_accountnumber" id="bbank_acnt_number" (keypress)="keyPress($event)">
+        </div>
+        <div>
+          <label class="reg">Bank IFSC
+          </label><br>
+          <input class="frmcntrl" [(ngModel)]="employee3Form.bank_ifsc" name="bank_ifsc" type="IFSC" id="bbank ifsc" maxlength="11">
+        </div>
+        <div class="inputs">
+          <label class="reg">Bank Address </label><br>
+          <input class="frmcntrl" [(ngModel)]="employee3Form.bank_address" name="bank_address" id="address">
+        </div>
+      </div>
+      <br>
+      <div class="teacher-signup btn">
+        <button type="submit" class="btn btn-warning" >CONFIRM</button>
+      </div>
+    </div>
+  </form>
+</div>
+

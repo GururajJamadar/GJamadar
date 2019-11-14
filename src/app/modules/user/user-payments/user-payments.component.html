@@ -1,0 +1,184 @@
+
+<app-user-sidebar></app-user-sidebar><br><br><br>
+
+<div class="col-md-9 offset-md-3 col-sm-9 col-9" style="margin-bottom: 10px;margin-top: 60px; background-color:rgb(245, 245, 245);">
+    <div class="row">
+      <input [(ngModel)]="searchText2" type="text" class="searchtext
+  " placeholder="Search.." name="search">
+<!--       <div class="col-md-11 col-sm-10 col-xs-12 hidden-xs tHeadings">
+        <div class="row">
+          <div class="col-md-3 col-sm-3">
+            <h6>Professional Details</h6>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <h6 style="margin-left:22px;">Status</h6>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <h6 style="margin-left:33px;">Total Amount</h6>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <h6 style="margin-left: 42px;">Transaction Date</h6>
+          </div>
+        </div>
+      </div> -->
+
+<!--       <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Professional Details</th>
+        <th>Status</th>
+        <th>Total Amount</th>
+        <th>Transaction Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>0000000</td>
+        <td>10/2/2019</td>
+      </tr>
+
+    </tbody>
+  </table>
+ -->
+      <div *ngIf="!tbookings" class="col-md-12 col-sm-12 transData hidden-xs" style=" text-align: center;
+          font-size: 20px; color: #03a2fd; font-weight: bolder;margin-top:0px;">You have not done any trascation yet.</div>
+      <div class="col-xs-12 visible-xs mHeading" style="z-index: 10; background-color: white; border-bottom: 1px solid;">
+        <!-- <h4>Transaction details</h4> -->
+      </div>
+      <div class="col-md-12 col-sm-12 hidden-xs transData">
+        <div class="row">
+          <div class="col-md-11 col-sm-11 bookingData" *ngFor="let i of tbookings | filter:searchText2 | paginate:{itemsPerPage:5,currentPage:p}; let i=index" (click)="popTransaction(i)">
+            <div class="row">
+              <div class="col-md-5 col-sm-5">
+                <div class="row">
+                  <div class="col-md-4 col-sm-4" style="text-align: right;" *ngIf="i.astrologer_photo">
+                    <img style="border-radius: 50%;" width="70" height="70" src="{{i.astrologer_photo}}">
+                  </div>
+                  <div class="col-md-4 col-sm-4" style="text-align: right;" *ngIf="!i.astrologer_photo">
+                    <img src="../assets/images/account.png" style="border-radius: 50%;" width="70" height="70">
+                  </div>
+                  <div class="col-md-8 col-sm-8" style="text-align: left;">
+                    <p>{{i.astrologer_name}}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2 col-sm-2">
+                <span *ngIf="i.order_status=='Success'" style="padding: 0 8px; margin: 0 10px; background-color: green; border-radius: 19%;"></span>
+                <span *ngIf="i.order_status=='Aborted'" style="padding: 0 8px; margin: 0 10px; background-color: red; border-radius: 19%;"></span>
+                <span *ngIf="i.order_status=='Failure'" style="padding: 0 8px; margin: 0 10px; background-color: gray; border-radius: 19%;"></span>
+                <span>{{i.order_status}}</span>
+              </div>
+              <div class="col-md-2 col-sm-2">{{i.amount | currency:"&#8377;"}} </div>
+              <div class="col-md-3 col-sm-3">
+                <h5>{{i.tracking_id}} </h5>
+                <p>{{i.trProfessionalans_date}} </p>
+              </div>
+              <div class="col-md-12 col-sm-12" *ngIf="selectedd==i.id">
+                <div class="row">
+                  <div class="col-md-3 col-sm-3" style="text-align: right;">
+                    <p>Payment Method:</p>
+                    <p>Appointment status:</p>
+                  </div>
+                  <div class="col-md-5 col-sm-4" style="text-align: left;">
+                    <p> {{i.payment_method}} </p>
+                    <p> {{i.status}} </p>
+                  </div>
+                  <div class="col-md-3 col-sm-4" style="box-shadow: 0 0 2px 0;">
+                    <div class="row">
+                      <div class="col-md-8 col-sm-8" style="text-align: right;">
+                        <p>Astrologer price:</p>
+                        <p>GST:</p>
+                        <p>Service charge:</p>
+                        <h5>Total amount:</h5>
+                      </div>
+                      <div class="col-md-2 col-sm-2">
+                        <p>{{i.astrologer_amount | currency:"&#8377;"}} </p>
+                        <p>{{i.gst | currency:"&#8377;"}} </p>
+                        <p>{{i.servicecharge | currency:"&#8377;"}} </p>
+                        <p>{{i.amount | currency:"&#8377;"}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+      </div>
+  </div>
+      <!---mobile View -->
+      <!-- <div class="col-md-12 col-xs-12 visible-xs" style="margin-bottom: 21px; margin-top: 4px;">
+        <div class="row">
+          <div *ngIf="!tbookings" class="col-xs-12 visible-xs" style=" text-align: center;
+          font-size: 20px; color: #03a2fd; font-weight: bolder;">You have not done any trascation yet.</div>
+          <div class="col-xs-12" *ngFor="let i of tbookings | filter:searchText2" (click)="popTransaction(i)" style="margin-bottom: 5px; background-color: white;">
+            <div class="row">
+              <div class="col-xs-12">
+                <h4>Transaction No {{i.tracking_id}}</h4>
+                <p><span *ngIf="i.order_status=='Success'" style="float: right; background-color: green; color: white; border-radius: 10%; padding:0 2px;">{{i.order_status}}</span>
+                  <span *ngIf="i.order_status=='Failure'" style="float: right; background-color: gray; color: white; border-radius: 10%; padding:0 2px;">{{i.order_status}}</span>
+                  <span *ngIf="i.order_status=='Aborted'" style="float: right; background-color: red; color: white; border-radius: 10%; padding:0 2px;">{{i.order_status}}</span></p>
+              </div>
+              <div class="col-xs-3" style="text-align: right;" *ngIf="i.astrologer_photo">
+                <img [src]="i.astrologer_photo" style="border-radius: 50%;" width="50" height="50">
+              </div>
+              <div class="col-xs-3" style="text-align: right;" *ngIf !="i.astrologer_photo">
+                <img src="/assets/images/account.png" style="border-radius: 50%;" width="50" height="50">
+              </div>
+              <div class="col-xs-6" style="text-align: left;">
+                <p> {{i.astrologer_name}}</p>
+              </div>
+              <div class="col-xs-3" style="text-align: left;">
+                {{i.amount | currency:"&#8377;"}}
+              </div>
+              <div class="col-xs-12" *ngIf="selectedd==i.id">
+                <div class="row">
+                  <div class="col-xs-6" style="text-align: right;">
+                    <p>Payment Method:</p>
+                    <p>Appointment status:</p>
+                  </div>
+                  <div class="col-xs-6" style="text-align: left;">
+                    <p>{{i.payment_method}}</p>
+                    <p>{{i.status}} </p>
+                  </div>
+                  <div class="col-xs-11" style="box-shadow: 0 0 2px 0; margin-left: 2vh;">
+                    <div class="row">
+                      <div class="col-xs-6" style="text-align: right;">
+                        <p>Astrologer price:</p>
+                        <p>GST:</p>
+                        <p>Service charge:</p>
+                        <h5>Total amount:</h5>
+                      </div>
+                      <div class="col-xs-6">
+                        <p>{{i.astrologer_amount | currency:"&#8377;"}} </p>
+                        <p>{{i.gst | currency:"&#8377;"}} </p>
+                        <p>{{i.servicecharge | currency:"&#8377;"}} </p>
+                        <p>{{i.amount | currency:"&#8377;"}} </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <style type="text/css">
+  .scrl {
+    overflow: auto;
+  }
+  
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  </style>
+  <!-- </div> -->
+  <!-- </div> -->
+  

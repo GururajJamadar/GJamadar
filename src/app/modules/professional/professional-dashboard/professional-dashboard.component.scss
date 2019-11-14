@@ -1,0 +1,91 @@
+.tablestyle {
+    border: 1px solid #ddd;
+    box-shadow: 3px 5px 20px grey;
+    background: whitesmoke;
+    margin-top: 50px;
+        margin-left: 12px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.paca{
+    margin-left: 50px;
+}
+.example-events {
+    width: 400px;
+    height: 200px;
+    border: 1px solid #555;
+    overflow: auto;
+}
+.mat-calendar {
+    display:block;
+    margin-right: -65px;
+}
+.mat{
+ font-size: 20px;
+}
+
+#calhead{
+    margin-left: 300px;
+   
+}
+#datee{
+    margin-left: 40px;
+    font-size: 20px;    
+}
+.mat-calendar[_ngcontent-c2] {
+    display: block;
+    font-weight: 600;
+}
+
+#homecont {
+    margin-top: 20px; 
+    margin-left: 300px;   
+}
+
+
+@media screen and (min-device-width: 320px) and (max-device-width:767px) {
+    
+#dateeee {
+    margin-left: 40px;
+    height: 58vh;
+}
+.tablestyle {
+    border: 1px solid #ddd;
+    box-shadow: 3px 5px 20px grey;
+    background: whitesmoke;
+    margin-top: 50px;
+    margin-left: 12px;
+    margin-bottom: 78px;
+}
+.cale{
+    margin-left: 0px;
+
+    font-size: 0px;
+
+    }
+.datepic{
+    height: 9vh;
+}
+
+#calhead{
+    margin-left: 150px;
+    margin-top:40px;
+   
+}
+
+#homecont {
+    margin-top: 20px; 
+    margin-left: 1px
+    
+
+}
+
+}
+
+
+

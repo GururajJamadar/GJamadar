@@ -1,0 +1,57 @@
+.box-outline {
+    margin-top: 125px;
+    border-radius: 8px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    border: 1px solid #ccc;
+    background: #fff;
+
+}
+
+.reset {
+    margin-bottom: 15px;
+    color: black;
+    text-align: center;
+}
+
+.resetbutton {
+    color: white;
+    outline: 0px;
+    font-size: x-large;
+    border: 0px;
+    border-radius: 15px;
+    padding: 5px 14px;
+    font-weight: bolder;
+    margin-top: 26px;
+    background: rgb(35, 86, 129);
+}
+.submitbutton{
+    margin-top:4%;
+}
+
+.mobilenumber {
+    border-color: #ed6505;
+}
+
+.reset-text p {
+    padding: 17px 0px;
+    color: black;
+    font-weight: bolder;
+    /*font-size: x-large;*/
+}
+
+.reset h1 {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.invalid-feedback{
+    color:red;
+}
+
+@media only screen and (min-width:320px){
+    .box-outline {
+/*margin-left:0px;*/
+position: fixed;
+}
+}

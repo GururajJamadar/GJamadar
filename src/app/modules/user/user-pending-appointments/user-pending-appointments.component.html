@@ -1,0 +1,65 @@
+
+  <app-user-sidebar></app-user-sidebar><br><br>
+<div class="bookingscontent" style=" margin-top: 13px;">
+  <div class="col-md-9 col-sm-9 col-9 offset-md-3" *ngIf="pendingapts1.length==0" style="text-align: center; font-size: 20px; color: #03a2fd; margin-top: 5vh; font-weight: bolder;"> You don't have any pending appointment yet.</div>
+  <div class="col-md-10 col-sm-10 offset-2 ">
+  <div class ="row">
+  <div class="col-md-4 col-sm-4" *ngFor=" let mybooking of pendingapts1">
+   <div class="divborder">
+    <div *ngIf="mybooking.status=='Pending'">
+      <div class="col-sm-6 astroimage1">
+
+          <div class="col-sm-6 astroimage1">
+            <img class="astroimage" src="{{mybooking.astrologer_photo}}">
+          </div>
+          <div class="col-sm-6 astrobookingtextinclient">
+            <div class="row" style="margin-left: -10px;">
+              <br>
+              <div class="astroname">{{mybooking.astrologer_name}}</div>
+              <div class="astro-item fontsize1"><img class="dateimage" src="assets/images/date.png">{{mybooking.date_of_booking}}</div>
+              <div class="astro-item fontsize1"><img class="timeimage" src="assets/images/42.png">{{ mybooking.time_of_booking}}</div>
+              <div class="astro-item fontsize1"><img class="timeimage" src="assets/images/42.png">{{ mybooking.datetime_difference1}}</div>
+            </div>
+            <div class="col-sm-12 col-md-12">
+              <div class="row">
+                <div class="col-sm-6 col-md-6"><img class="statusimage" title="pending" src="assets/images/pendingfinal.png">
+                  <label class="labelheading">{{mybooking.status}}</label>
+                </div>
+                <div class="col-md-6 col-sm-6" (click)="confirm_cancelappointment(mybooking)"><img class="statuspend" title="cancel" src="assets/images/abort-146072_960_720.png"><a class="cancel">Cancel</a></div>
+                <div class="col-sm-6 col-md-12">
+
+                  <div class=""><img style="width: 25px;height: 25px;" class="statusvido" title="videocall" src="assets/images/video-call.png">
+                    <button class="labelheading" (click)="videomode(mybooking)">Videocall</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="modal fade" #cancelappointment>
+ <div class="modal-dialog ">
+ <div class="modal-content" style="height: 200px;">	
+<div class="modal-header" style=" background-color: rgb(40,110,171);">
+        <h4 class="modal-title text-center" style="color: white;font-size:18px;">Are you sure, you want to cancel the appointment?</h4>
+      </div>
+      <div class="modal-body text-center" style="font-size: 14px;">
+        If you click yes, appointment will be cancelled and amount will be added to your wallet.
+      </div>
+      <div class="modal-footer text-center" style="border-top:none;margin-right: 231px;">
+        <button class="md-raised md-warn btncolor" data-dismiss="modal">Cancel</button>
+        <button class="md-raised md-primary btncolor" (click)="reschedule_appoint(mybooking_data)">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

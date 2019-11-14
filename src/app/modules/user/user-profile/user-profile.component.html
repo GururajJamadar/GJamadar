@@ -1,0 +1,208 @@
+<app-user-sidebar></app-user-sidebar>
+
+  <div class="modal fade" #updatesucess>
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #61b1ff; height:50px;">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 class="text-center" style="margin-top: -5px;
+                              color: #eee;"><b class="glyphicon glyphicon-thumbs-up"></b> Thank You</h3>
+        </div>
+        <div class="modal-body">
+          <h4 class="text-center">Updated Successfully</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger pull-right" data-dismiss="modal">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+   <div class="login-signup">
+    <div class="row">
+      <div class="col-sm-8 col-md-8 offset-md-2 nav nav-tabs">
+        <ul class="nav nav-tabs row" role="tablist">
+          <li role="presentation" class="active col-sm-8"><a href="#home" aria-controls="home" role="tab"data-toggle="tab" id="per">PERSONAL DETAILS</a></li>
+          <li role="presentation" class="col-sm-8"><a href="#profile" aria-controls="profile" role="tab"
+             data-toggle="tab"> BILLING DETAILS</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="home">
+        <div class="row">
+          <div class="col-sm-8 col-md-8 col-md-offset-2 mobile-pull" *ngIf="clidata">
+            <article role="login" class="art">
+              <form class="signup" #firstForm="ngForm" class="settform" (ngSubmit)="onSubmit1(firstForm)">
+                <div class="preview text-center">
+                  <span *ngIf ="!clidata.c_profile_photo">
+                    <img (click)="fileInput.click()" class="preview-img" src="assets/images/account.png"
+                     alt="Preview Image" width="100" height="100" /></span>
+                  <span *ngIf="clidata.c_profile_photo"><img src={{clidata.c_profile_photo}} class="preview-img"
+                     alt="Preview Image" width="100" height="100"></span>
+                  <div class="browse-button">
+                    Upload file
+                    <input class="browse-input" type="file" required name="UploadedFile" id="UploadedFile"
+                     #fileInput (change)="selectProfilePic($event)">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" [(ngModel)]="clidata.first_name" id="first_name"
+                   name="first_name" placeholder="Your name Full Name..">
+                </div>
+                <div class="form-group">
+                  <select class="form-control" name="gender" id="gender" [(ngModel)]="clidata.gender" required>
+                    <option [ngValue]="null" disabled="disabled">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Phone Number" [(ngModel)]="clidata.mobile_number"
+                   id="mobile_number" name="mobile_number" minlength="10" maxlength="10">
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" id="email_id" [(ngModel)]="clidata.email_id" name="email_id"
+                   placeholder="Your Email Address" required>
+                </div>
+                <div class="form-group">
+                  <select class="form-control" name="country" (change)="changeCountry($event.target.value)" id="country"
+                   [(ngModel)]="clidata.country" required>
+                    <option [ngValue]="null" disabled="disabled">--Select State--</option>
+                    <option *ngFor="let count of countryList" value={{count.name}}>
+                      {{count.name}}
+                    </option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <select class="form-control" name="state" id="state" [(ngModel)]="clidata.state" required>
+                    <option [ngValue]="null" disabled="disabled">--Select District--</option>
+                    <option *ngFor="let stat of cities" value={{stat}}>
+                      {{stat}}
+                    </option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <input type="text " class="form-control" id="city" [(ngModel)]="clidata.city" name="city"
+                   placeholder="Your city ." required>
+                </div>
+                <div class="form-group">
+                  <input type="text " class="form-control" id="address" [(ngModel)]="clidata.address" name="address"
+                   placeholder="Your address ." required>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <input ngbDatepicker #d="ngbDatepicker" [(ngModel)]="clidata.date_of_birth" class="form-control"
+                     placeholder="yyyy-mm-dd (Date-Of-Birth)" name="date_of_birth">
+                    <span class="input-group-btn">
+                      <button class="btn" (click)="d.toggle()" type="button"><span class="fa fa-calendar"></span> </button>
+                    </span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text " class="form-control" id="time_of_birth" [(ngModel)]="clidata.time_of_birth"
+                   name="time_of_birth" placeholder="Your time_of_birth ." required>
+                </div>
+                <div class="form-group">
+                  <input type="text " class="form-control" id="place_of_birth" [(ngModel)]="clidata.place_of_birth"
+                   name="place_of_birth" placeholder="Your place_of_birth ." required>
+                </div>
+                <div class="form-group">
+                  <input type="submit" class="btn btn-success btn-md" value="update">
+                  <input type="button" class="btn btn-success btn-md" value="cancel" (click)="cancel_home()"
+                   style="float: right; height: 45px;">
+                </div>
+              </form>
+            </article>
+          </div>
+        </div>
+        
+        <!-- end of row -->
+      </div>
+      <!-- end of home -->
+      <!-- <========================form2====================================================> -->
+      <div role="tabpanel" class="tab-pane fade" id="profile">
+        <div class="row">
+          <div class="col-sm-8 col-md-8 col-md-offset-2  mobile-pull">
+            <article role="login" class="art">
+              <form class="signup" #secoendForm="ngForm" class="settform" (ngSubmit)="onSubmit2(secoendForm)">
+                <div class="form-group">
+                  <input type="text " class="form-control" id="billing_cus_name" [(ngModel)]="secoendForm.billing_cus_name"
+                   name="billing_cus_name" placeholder="Your billing_cus_name ." required>
+                </div>
+                <div class="form-group">
+                  <input type="text " class="form-control" id="billing_cus_state" [(ngModel)]="secoendForm.billing_cus_state"
+                   name="billing_cus_state" placeholder="Your billing_cus_state ." required>
+                </div>
+                <div class="form-group">
+                  <input type="text " class="form-control" id="billing_cus_address" [(ngModel)]="secoendForm.billing_cus_address"
+                   name="billing_cus_address" placeholder="Your billing_cus_address ." required>
+                </div>
+                <div class="form-group">
+                  <input type="text " class="form-control" id="billing_cus_zipcode" [(ngModel)]="secoendForm.billing_cus_zipcode"
+                   name="billing_cus_zipcode" placeholder="Your billing_cus_zipcode ." (keypress)="keyPress($event)"
+                   minlength=6 maxlength=6 required>
+                </div>
+                <div class="form-group">
+                  <input type="text " class="form-control" id="billing_cus_city" [(ngModel)]="secoendForm.billing_cus_city"
+                   name="billing_cus_city" placeholder="Your billing_cus_city ." required>
+                </div>
+                <div class="form-group">
+                  <input type="text " class="form-control" id="billing_cus_country" [(ngModel)]="secoendForm.billing_cus_country"
+                   name="billing_cus_country" placeholder="Your billing_cus_country ." required>
+                </div>
+                <div class="form-group">
+                  <input type="text " class="form-control" id="billing_cus_mobile" [(ngModel)]="secoendForm.billing_cus_mobile"
+                   name="billing_cus_mobile" placeholder="Your billing_cus_mobile ." required>
+                </div>
+                <div class="form-group">
+                  <input type="text " class="form-control" id="billing_cus_email" [(ngModel)]="secoendForm.billing_cus_email"
+                   name="billing_cus_email" placeholder="Your billing_cus_email ." required>
+                </div>
+                <div class="form-group">
+                  <input type="submit" class="btn btn-success btn-md" value="update">
+                  <input type="button" class="btn btn-success btn-md" value="cancel" (click)="cancel_home()" style="float: right;
+                      height: 45px;">
+                </div>
+              </form>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" #updatesucess2>
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #61b1ff; height:50px;">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 class="text-center" style="margin-top: -5px;
+                                color: #eee;"><b class="glyphicon glyphicon-thumbs-up"></b> Thank You</h3>
+        </div>
+        <div class="modal-body">
+          <h4 class="text-center">Image Uploaded Successfully</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger pull-right" data-dismiss="modal">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" #updatesucess1>
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #61b1ff; height:50px;">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 class="text-center" style="margin-top: -5px;
+                               color: #eee;"><b class="glyphicon glyphicon-thumbs-up"></b> Thank You</h3>
+        </div>
+        <div class="modal-body">
+          <h4 class="text-center">Updated Successfully</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger pull-right" data-dismiss="modal">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>

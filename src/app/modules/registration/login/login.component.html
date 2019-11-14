@@ -1,0 +1,53 @@
+<app-header></app-header>
+<div class="container-fluid signupPage" style="background-image:url('assets/images/online-learning.jpg');">
+  <div class="col-sm-12 col-md-12">
+    <div class="row">
+      <div class="col-md-4 col-sm-12" id="login">
+
+       <form novalidate class="loginform" [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm)">
+
+        <div >
+          <h5 class="log">Login</h5>
+          <p style="color:red">{{error_message}}</p>
+        </div>
+        <div class="inputs">
+          <label class="reg">Mobile Number</label>        
+          <br>
+
+          <input type="text"  class="frmcntrl" formControlName="mobile" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" id="mobile_number"  placeholder="Enter the mobile number" (keypress)="keyPress($event)"  minlength=10 maxlength=10/>
+    
+          <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+            <div *ngIf="f.mobile.errors.required">Username is required</div>
+          </div>
+        </div>
+
+        <div class="inputs">
+
+          <label class="reg1">Password</label>
+          <br>
+
+          <input type="password"  class="frmcntrl" formControlName="password"
+          id="password"  placeholder="Enter the password" required/> 
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback"> 
+            <div *ngIf ="f.password.errors.required"> Password is required</div>
+          </div> 
+
+        </div>
+
+
+        <div class="text-center ">
+          <button class="submi" type="submit">Login</button>
+          <p>
+           <li> <a class="forgot"  routerLink="/registration/forgotpassword" class="text-center">Forgot Password?</a></li>
+         </p>
+
+
+         <!-- <button class="btn1 btn-info" style="float:right" routerLink="/registration/signup">User signUp</button> -->
+
+       </div>
+       
+
+     </form>
+   </div>
+</div>
+</div>

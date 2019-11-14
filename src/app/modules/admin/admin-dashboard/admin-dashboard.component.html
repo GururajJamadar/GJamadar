@@ -1,0 +1,132 @@
+
+
+<app-admin-sidbar></app-admin-sidbar>
+<!-- <br><br> -->
+<!-- <div class="col-md-1 backg"> -->
+     <!-- <div class="col-md-10 offset-md-2" style="background-color: #d3d3d3;height: 1000vh;"> -->
+<div style="background-color: #dfdfdf;bottom: 0;height: 94vh;margin-top: 10px;">
+<div class="col-md-10 col-lg-9 offset-md-2 offset-lg-3">
+  <div class=" col-md-10 welcome backg offset-md-2">
+
+    <h1><b>Welcome to Admin Dashboard</b></h1><br><br>
+  </div>
+  <!-- <div class="col-md-10 col-lg-9 offset-md-2 offset-lg-3"> -->
+        <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-registed card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">people</i>
+                  </div>
+                  <p class="card-category">New Professionals</p>
+                  <h3 class="card-title"> {{ count.astro_count | number:0 }}
+                    <!-- <small>GB</small> -->
+                  </h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                        <button mat-stroked-button color="primary" (click)="goManage()">more</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-registed card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">keyboard</i>
+                  </div>
+                  <p class="card-category">Reg Professionals</p>
+                  <h3 class="card-title">{{ count.regatrologercount | number:0 }}
+                    <!-- <small>GB</small> -->
+                  </h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                   <button mat-stroked-button color="primary"(click)="goRegistered()">more</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-registed card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">keyboard</i>
+                  </div>
+                  <p class="card-category">Reg Clients</p>
+                  <h3 class="card-title">{{ count.clientcount | number:0 }}
+
+                    <!-- <small>GB</small> -->
+                  </h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <button mat-stroked-button color="primary" (click)="goManageclients()">more</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-registed card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">receipt</i>
+                  </div>
+                  <p class="card-category">Appointments</p>
+                  <h3 class="card-title"> {{ count.appointmentcount | number:0 }}
+                    <!-- <small>GB</small> -->
+                  </h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                   <button mat-stroked-button color="primary" (click)="goManageappointments()">more</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-registed card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">account_balance_wallet</i>
+                  </div>
+                  <p class="card-category">Payments</p>
+                  <h3 class="card-title"> {{0}}
+                    <!-- <small>GB</small> -->
+                  </h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <button mat-stroked-button color="primary" (click)="goPaymentinfo()">more</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-registed card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">close</i>
+                  </div>
+                  <p class="card-category">Disapproved</p>
+                  <h3 class="card-title"> {{ count.disaprovedcount | number:0 }}
+                    <!-- <small>GB</small> -->
+                  </h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                   <button mat-stroked-button color="primary" (click)="disapproved()">more</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!-- </div> -->
+

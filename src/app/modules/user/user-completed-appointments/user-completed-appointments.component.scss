@@ -1,0 +1,161 @@
+.astroname {
+    font-weight: 600;
+    font-size: 13px;
+    padding: 11px 0;
+    overflow: hidden;
+}
+.line1 {
+    border-bottom: 1px solid #ddd;
+    height: 7vh;
+    margin-bottom: 20px;
+    background-color: rgb(15, 125, 194);
+    color: white;
+}
+thead>tr>th {
+    cursor: pointer;
+}
+.dateimage {
+    height: auto;
+    margin-right: 5px;
+    width: 11%;
+    opacity: .8;
+}
+
+.timeimage {
+    height: auto;
+    width: 10%;
+    margin-right: 5px;
+}
+
+.statusimage {
+    height: 4vh;
+}
+
+.labelheading {
+    color: #4e4e4e;
+    font-size: 13px;
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+.status {
+    text-align: center;
+    margin-top: 19px;
+}
+
+.astroimage {
+    transition: transform 0.5s;
+   height: 80%;
+    width: 80%;
+    border-radius: 50px;
+    margin-top: 38px;
+}
+
+.astroimage1 {
+    height: 15vh;
+}
+.divborder {
+    width: 35vh;
+    margin: 16px 66px;
+    box-shadow: 3px 1px 20px 5px #ccc;
+    transition: transform 0.5s;
+}
+
+.divborder:hover {
+    transform: scale(1.1);
+}
+
+
+
+.astrobookingtextinclient {
+    color: darkslategray;
+}
+.astro-item{
+    font-size: 13px;
+}
+
+.searchtext {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  margin-bottom: 10px;
+  margin-top: -70px;
+  background: whitesmoke;
+  color: brown;
+  &:focus {
+    width: 75%;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width:767px) {
+    .astrobookingtextinclient {
+        color: darkslategray;
+    }
+    .statusimage {
+        height: 4vh;
+    }
+    .bookingscontent {
+       
+          /* height: 800px; */
+        /*background-color: #ffffff;
+        padding: 24px;*/
+    }
+    .status {}
+    .boxspace {
+        border: 1px solid rgb(255, 255, 255);
+        background-color: white;
+        padding: 18px 0px 0px 4px;
+        /* width: 24%; */
+        box-shadow: 4px 0px 20px 4px #ddd;
+        /* margin-top: 20px; */
+        margin: 20px 0px;
+        margin-right: 94px;
+        /* border-style: groove; */
+        min-height: 35vh;
+        transition: transform 0.5s;
+    }
+    .divborder {
+    width: 40vh;
+    margin: -39px 0px 37px 53px;
+    box-shadow: 0px 0px 0px 0px #ccc;
+    transition: transform 0.5s;
+    border-bottom: 2px dashed rgb(204, 212, 251);
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width:1024px) {
+    .divborder {
+        width: 32vw;
+        margin: 16px 45px;
+        box-shadow: 3px 1px 20px 5px #ccc;
+        transition: transform 0.5s;
+    }
+    .bookingscontent {
+        margin-top: 32px;
+    }
+    .line1 {
+        border-bottom: 1px solid #ddd;
+        height: 4vh;
+        margin-bottom: 20px;
+        background-color: rgb(15, 125, 194);
+        color: white;
+    }
+    .status {
+        padding: 10px 39px;
+    }
+    .astroimage1 {
+        height: 11vh;
+    }
+
+}

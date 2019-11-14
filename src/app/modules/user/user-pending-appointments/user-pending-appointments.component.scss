@@ -1,0 +1,188 @@
+
+.statusst {
+    padding: 1vh 1vh;
+    text-align: center;
+    margin-left: -118px;
+    font-size: 13px;
+}
+.row {
+    margin-right: -58px;
+    margin-left: -19px;
+}
+.statusvideo{
+
+        padding: 9px 60px;
+    margin-left: 104px;
+    margin-top: -12px;
+}
+.col-xs-12{
+    position: relative;
+    min-height: 1px;
+    padding-right: 20px;
+    padding-left: 15px;
+}
+
+.statusbar {
+    padding: 1vh 1vh;
+    font-weight: bolder;
+    color: red;
+    cursor: pointer;
+    font-size: 13px;
+    margin-left: 1px;
+}
+
+
+.callimage {
+    height: auto;
+    width: 9%;
+    margin-right: 7px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.astroname {
+    font-weight: 600;
+    font-size: 13px;
+    padding: 11px 0;
+    overflow: hidden;
+   
+}
+
+.dateimage {
+    height: auto;
+    margin-right: 5px;
+    width: 7%;
+    opacity: .8;
+    font-size: 10px;
+}
+.fontsize1{
+    font-size: 12px;
+}
+
+.timeimage {
+    height: auto;
+    width: 7%;
+    margin-right: 5px;
+    font-size: 10px;
+
+}
+.btncolor{
+    background-color:#3498DB;
+    color: white;
+    font-size: 14px;
+}
+
+.statusimage {
+    height: 3vh;
+    margin-left: 0px;
+}
+.statuspend {
+    height: 3vh;
+    margin-left: 118px;
+}
+.statusvido {
+    height: 3vh;
+    margin-left: -37px;
+    margin-bottom: -57px;
+}
+.cancel{
+    margin-left: 118px;
+}
+button[disabled] {
+    background: white;
+}
+button {
+    background: #3498DB;
+}
+.labelheading {
+    font-size: 13px;
+}
+
+.status {
+    text-align: center;
+}
+
+.astroimage {
+       /*transition: transform.5s;*/
+    height: 65%;
+    width: 50%;
+    border-radius: 50px;
+    margin-top: 31px;
+    margin-left: 29px;
+}
+
+.astroimage1 {
+    height: auto;
+}
+.disabled {
+  pointer-events: none; 
+  display: none; 
+  color: green;
+}
+
+.boxspace:hover {
+    transform: scale(1.1);
+}
+
+.divborder {
+    width: 35vh;
+    margin: 16px 66px;
+    box-shadow: 3px 1px 20px -1px #999999f5;
+}
+
+.astro-item {
+    margin-bottom: 4px;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width:767px) {
+    .astrobookingtextinclient {
+        color: darkslategray;
+    }
+    .statusimage {
+        height: 2vh;
+    }
+    
+    .statusvideo {
+    padding: 22px 66px;
+    margin-left: -128px;
+    margin-top: -12px;
+    }
+
+    .divborder {
+    width: 40vh;
+    margin: -39px 0px 37px 53px;
+    box-shadow: 0px 0px 0px 0px #ccc;
+    transition: transform 0.5s;
+    border-bottom: 2px dashed rgb(204, 212, 251);
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width:1024px) {
+    .divborder {
+        width: 32vw;
+        margin: 16px 45px;
+        box-shadow: 3px 1px 20px 5px #ccc;
+        transition: transform 0.5s;
+    }
+    .line1 {
+        border-bottom: 1px solid #ddd;
+        height: 4vh;
+        margin-bottom: 20px;
+        background-color: rgb(15, 125, 194);
+        color: white;
+    }
+    .bookingscontent {
+        margin-top: 32px;
+    }
+
+    .status {
+        padding: 14px 0px;
+    }
+    .astroimage1 {
+        height: 11vh;
+    }
+}
+

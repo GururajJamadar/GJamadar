@@ -1,0 +1,271 @@
+#mobile-home{
+  margin-left: 30px;
+
+}
+#mobile-filter{
+  margin-top: 0px;
+  margin-left: 0px;
+}
+#acad{
+    height: 13vh;
+    border-radius: 10px;
+}
+
+.row{
+  margin-top: -29px;
+}
+
+.booknow1 {
+  cursor: pointer;
+  text-align: center;
+  color: #008000;
+  margin-left: 85px;
+  margin-top: -55px;
+  font-size: 12px;
+}
+
+
+.astrolabel {
+  border-bottom: 4px solid #76b0e2;
+  margin-bottom: 20px;
+}
+.booknow{
+  border: 1px solid;
+  cursor: pointer;
+  text-align: center;
+  background-color: #347ab7;
+  color: white;
+  padding: 9px;
+  box-shadow: -20px 1px 20px 1px #bfabab;
+  border-radius: 24px;
+}
+
+.home-side-menu {
+  border: 3px solid #e3dfdf;
+  padding: 8px;
+  text-align: center;
+  margin-top: 28px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.companiesdiv {
+  font-weight: bold;
+  padding: 2vh;
+  margin-left:130px;
+}
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+.frmcntrl1 {
+  background-color: transparent;
+  color: #5bc0de;
+  outline: none;
+  outline-style: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid #eeeeee 1px;
+  padding: 3px 10px;
+  text-align: center;
+  width: 82%;
+  margin: auto;
+}
+.check{
+  font-weight: bold;
+  padding: 0vh;  
+}
+
+@media only screen and (min-width:320px) and (max-width: 768px){
+  
+#mobile-home{
+  margin-left: 0px;
+
+}
+  #mobile-filter{
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+
+  #acad{
+    margin-left: -42px;
+    width: 352px;
+    margin-top: 38px;
+  
+  }
+  .astrolabel {
+  border-bottom: 4px solid #76b0e2;
+  margin-bottom: 20px;
+  margin-left: 35px;
+}
+
+  
+}
+
+@media screen and (max-width:500px){
+  #state2{
+    display:none;
+  }
+  #price2{
+    display:none;
+  }
+
+}
+@media screen and (min-width:500px){
+  #state1{
+    display:none;
+  }
+  
+  #state2{
+    display:block;
+}
+#price1{
+  display:none;
+}
+
+#price2{
+  display:block;
+}
+
+
+}
+
+
+/*CSS FOR CARDS*/
+
+
+#team {
+  background: #eee !important;
+}
+.top h1{
+  text-align: center; 
+  color: white; 
+  margin-bottom: 25px;
+  font-family: Poppins-Regular;  
+}
+.top{
+  height: 175px;
+  z-index: 1;
+}
+.top::before{
+  content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(54,84,99,.7);
+}
+h4{
+  margin-top: -79px;
+  margin-left: 60px;
+  font-family: serif;
+}
+h6{
+  margin-top: -69px;
+  margin-left: 60px;
+}
+
+#team .card {
+  border: none;
+  background: #ffffff;
+}
+.starrate{
+  color: #337ab7;
+  left: 17px;
+  font-size: 10px;
+  margin-left: 10px;
+}
+.nonStar {
+  color: #337ab7;
+  left: 17px;
+  font-size: 10px;
+  margin-left: 67px;
+}
+.card{
+  height: 200px;
+  /*width:250px;*/
+  margin-top: 15px;
+}
+.frontside {
+  min-height: auto;
+}
+hr{
+  margin-bottom: 10px;
+  border-bottom: 1px solid #dfdfdf;
+}
+.frontside .card .card-title,{
+  color: #007b5e !important;
+}
+.card-proff{
+  color: #3ca0deb8 !important;
+  margin-left: 60px;
+}
+.frontside .card .card-body1 {
+  border-radius: 50%;
+}
+.imgonline{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-left: -183px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.text-centerd{
+  text-align: center!important;
+}
+.expresp{
+  margin-left: -145px;
+  height: auto;
+  width: 10%;
+  opacity: .9;
+}
+.vidprice {
+ height: auto;
+ margin-left: -155px;
+ width: 3%;
+ opacity: .8;
+}
+.onlineimg{
+  height: auto;
+  margin-left: 211px;
+  margin-top: -178px;
+  width: 34px;
+  opacity: .8;
+}
+.onlineimg:hover{
+  width: 45px;
+  cursor: pointer;
+}
+.online12{
+  margin-top: -73px;
+  margin-left: 210px;
+  color: green;
+}
+
+.offline{
+  margin-top: -73px;
+  margin-left: 210px;
+  color: red;
+}
+.popprofname{
+  font-family: Georgia;
+  font-weight: bold; 
+  color: white;
+  margin-top: 24px;
+  margin-left: 10px;
+
+}
+
+.astroclas{
+  font-size: 26px;
+  font-weight: normal;
+  margin-top: 0px;
+}
+
+
+

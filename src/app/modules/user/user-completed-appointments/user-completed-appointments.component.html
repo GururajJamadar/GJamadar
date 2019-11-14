@@ -1,0 +1,40 @@
+<!-- <app-header></app-header> -->
+<app-user-sidebar></app-user-sidebar>
+<br><br>
+
+<div class="col-xs-11 col-sm-9 col-md-9 offset-md-3 bookingscontent" style="margin-top: 13px;">
+<!--   <div class="col-xs-12 col-md-12 col-sm-12" *ngIf="completedapts.length==0" style="text-align: center; font-size: 20px; color: #03a2fd; margin-top: 5vh; font-weight: bolder;"> You haven't booked any appointment yet.</div> -->
+  <div class="table-responsive" id="disbursementMargin"><br>
+      <input type="text" name="search" [(ngModel)]="filter" class="searchtext" placeholder="Search Completed records..">
+    <table class="table table-striped table-bordered">
+      <thead id="myloanhead">
+        <tr class="tableTextCenter"> 
+         <th style="background-color: #c5c5d2" (click)="sort('name')">Professionals Name<span class="fa fa sort-icon" *ngIf="key =='name'" [ngClass]="{'fa fa-chevron-up':reverse,'fa fa-chevron-down':!reverse}"></span></th>
+          <th style="background-color: #c5c5d2" (click)="sort('date')">Date of Booking<span class="glyphicon sort-icon" *ngIf="key =='date'" [ngClass]="{'fa fa-chevron-up':reverse,'fa fa-chevron-down':!reverse}"></span></th>
+          <th style="background-color: #c5c5d2" (click)="sort('time')">Time of Booking<span class="glyphicon sort-icon" *ngIf="key =='time'" [ngClass]="{'fa fa-chevron-up':reverse,'fa fa-chevron-down':!reverse}"></span></th>
+          <th style="background-color: #c5c5d2" (click)="sort('status')">Status<span class="glyphicon sort-icon" *ngIf="key =='status'" [ngClass]="{'fa fa-chevron-up':reverse,'fa fa-chevron-down':!reverse}"></span></th>
+          <th style="background-color: #c5c5d2" (click)="sort('price')">Professional Price<span class="glyphicon sort-icon" *ngIf="key =='price'" [ngClass]="{'fa fa-chevron-up':reverse,'fa fa-chevron-down':!reverse}"></span></th>
+          <th style="background-color: #c5c5d2" (click)="sort('amt')">Total Amount<span class="glyphicon sort-icon" *ngIf="key =='amt'" [ngClass]="{'fa fa-chevron-up':reverse,'fa fa-chevron-down':!reverse}"></span></th>
+          
+          </tr>
+        <tr class="text-center">
+          <td colspan="6" *ngIf="(completedapts| filter: filter).length=== 0" style="color: #ff0052">No Records Found</td>
+        </tr>
+      </thead>
+    {{completedapts}}
+   <tbody *ngFor="let mybooking of completedapts | orderBy: key : reverse | filter:filter; let i = index" id="myduesbody">
+        <tr>
+          <td>{{mybooking.astrologer_name}}</td>
+          <td>{{mybooking.date_of_booking}} </td>
+          <td>{{mybooking.time_of_booking}}</td>
+          <td>{{mybooking.status}}</td>
+          <td>{{mybooking.astrologer_amount | currency:"&#8377;"}} </td>
+          <td>
+            <p>{{mybooking.amount | currency:"&#8377;"}}</p>
+          </td>
+        </tr>
+      </tbody>  
+
+       </table>
+  </div>
+</div>

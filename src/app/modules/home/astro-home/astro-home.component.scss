@@ -1,0 +1,328 @@
+.homelangingpage{
+    margin-top: 0px;
+    // background-image: url('/assets/images/Astro143.jpg')
+    // background-color: #bfabab;
+
+    
+}
+
+#mobile-home{
+    margin-left: 30px;
+    margin-top: 70px;
+}
+#mobile-filter{
+    background-color: white;
+    margin-top: 40px;
+     }
+#steps{
+   background-color: white;
+    margin-left: 30px;
+}
+
+.regsteps{
+  //  background-color: white;
+  background-color: cornsilk;
+   height: 13vh;
+   border-radius: 10px;
+
+}.regstepsglyph{
+  margin-top: -26px;
+  border-style: solid;
+  border-color: #337ab7;
+  border-radius: 44px;
+  width: 56px;
+  height: 31px;
+  }
+  .regstepsglyph1 {
+  margin-left:40px;
+  }
+  .regstepsglyph2 {
+    margin-left: 250px;
+     margin-top: -31px;
+  }
+  .regstepsglyph3 {
+    margin-left: 512px;
+     margin-top: -31px;
+  }
+  .regstepsglyph4 {
+    margin-left: 770px;
+     margin-top: -31px;
+  }
+.stepglyph{
+  font-size: 40px;
+  margin-left: -10px;
+}
+.booknow1 {
+  cursor: pointer;
+  text-align: center;
+  color: #008000;
+  margin-left: 95px;
+  margin-top: -55px;
+  font-size: 12px;
+}
+.booknow1234 {
+  color:red;
+    margin:  4px 10px;
+}
+
+.imagediv {
+   width: 40px;
+  height: 35px;
+border-radius: 50%;
+    margin-top: -16px;
+    margin-left: -3px;
+}
+
+
+.imgdiv {
+  height: auto;
+  margin-top: 15px;
+  padding: 0;
+  border-radius: 52%;
+}
+
+.chitlogo1 {
+  height: 24vh;
+}
+.nonStar {
+  color: lightgrey;
+  left: 17px;
+  font-size: 18px;
+}
+
+.mydivborder {
+  width: 35vh;
+  margin: 16px 11px;
+  box-shadow: 3px 1px 20px 5px #ccc;
+  border-bottom: blue;
+}
+
+.mydivborder:hover {
+  transform: scale(1.1);
+  background-color: transparent;
+  color: #0F7DC2;
+} 
+.row{
+  margin-top: -29px;
+}
+
+.astrolabel {
+  border-bottom: 4px solid #76b0e2;
+  margin-bottom: 36px;
+  margin-top: 35px;
+  height: 13vh;
+  
+}
+.astroclas{
+  margin-top: 30px;
+}
+.modal-content {
+  background-color: rgb(250, 250, 250);
+}
+.reviewername {
+  font-style: italic;
+  font-family: cursive;
+  color: #337ab7;
+  font-weight: bolder;
+  font-size: 18px;
+  margin-left: 2vh;
+}
+/*.pricecolor {
+  color: #347ab7;
+  cursor: pointer;
+  margin-left: 1vh;
+}*/
+
+
+.labelprice {
+  margin-left: 1vh;
+  color: red;
+}
+
+.showmorelabel {
+  color: black;
+  margin-left: 1vh;
+  margin-top: 1vh;
+}
+
+.showmoredetails {
+  margin-top: 1vh;
+}
+.star {
+  color: #337ab7;
+  left: 17px;
+  font-size: 18px;
+}
+/*h4, .h5, .h6, h4, h5, h6 {
+  margin-top: -5px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+}*/
+
+.dateimage {
+    height: auto;
+    margin-right: 3px;
+    width: 24px;
+    opacity: .8;
+}
+.dateimage1 {
+   height: auto;
+    margin-right: 1px;
+    width: 10%;
+    opacity: .8;
+}
+
+.dateimage2 {
+   height: auto;
+    margin-right: 1px;
+    width: 6%;
+    opacity: .8;
+}
+.home-side-menu {
+  border: 3px solid #e3dfdf;
+  padding: 8px;
+  text-align: center;
+  margin-top: 28px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+.btn {
+  width: 98px;
+  float: left;
+  height: 35px;
+  margin-left: 64px;
+  font-size: 18px;
+  margin-top: 12px;
+}
+.check {
+  font-weight: bold;
+  padding: 0vh;
+}
+.menu {
+  border: 3px solid #e3dfdf;
+  padding: 8px;
+  text-align: center;
+  margin-top: 28px;
+  cursor: pointer;
+  color: inherit;
+  text-transform: uppercase;
+}
+.astronamelabel {
+  text-transform: capitalize;
+  font-size: 22px;
+  color: white;
+  margin-left: 23px;
+}
+
+.companiesdiv {
+  font-weight: bold;
+  padding: 2vh;
+  
+}
+.booknow{
+  border: 1px solid;
+  cursor: pointer;
+  text-align: center;
+  background-color: #347ab7;
+  color: white;
+  padding: 9px;
+  box-shadow: -20px 1px 20px 1px #bfabab;
+  border-radius: 24px;
+}
+
+@media only screen and (max-width: 640px)  {
+.mobile-filter{
+margin-left: -14px;
+margin-top:0px;
+}
+.sport1{
+      margin-left: -14px;
+      margin-top:0px;
+    }
+#mobile-filter{
+  margin-top: 0px;
+}
+.regsteps{
+  margin-left: -42px;
+  margin-right:100px;
+  width: 352px;
+  // height:31%;
+  font-size:13px;
+}
+.regstepsglyph1{
+  margin-left: -7px;
+}
+.regstepsglyph2{
+  margin-left: 77px;
+}
+.regstepsglyph3{
+  margin-left: 170px;
+}
+.regstepsglyph4{
+  margin-left: 257px;
+}
+.mobile-home{
+  margin-left: 0px;
+}
+.home{
+width:314px;
+}
+.astrolabel {
+  // width: 107%;
+  margin-left: -7px;
+}
+.astro{
+  margin-left: -30px;
+  width:107%;
+}
+.tutorlabel1 {
+  margin-left: 31px;
+}
+.tutorlabel {
+  margin-left: -31px;
+}
+.asto4{
+  margin-left: -42px;
+    width: 352px;
+}
+    }
+
+
+
+    @media screen and (max-width:500px){
+      #astro2{
+        display:none;
+      }
+      #type2{
+        display:none;
+      }
+      #state2{
+        display: none;
+      }
+    }
+    @media screen and (min-width:500px){
+      #astro1{
+        display:none;
+      }
+      
+      #astro2{
+        display:block;
+      }
+      #type1{
+        display: none;
+      }
+      #type2{
+        display: block;
+      }
+      #state1{
+        display: none;
+      }
+      #state2{
+        display: block;
+      }
+    }

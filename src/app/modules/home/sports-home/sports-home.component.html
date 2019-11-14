@@ -1,0 +1,231 @@
+<app-header></app-header>
+<br><br>
+<div class="col-md-12 col-xs-12 col-sm-12 homelangingpage">
+  <div class="row">
+    <div class="col-xs-12 col-md-2 col-sm-2 col-md-offset-1 col-sm-offset-1 companiesdiv"
+     id="mobile-filter" style="height:100%;overflow: scroll;border-right: inset;">
+      <div class="sport1">
+        <div>
+          <p class="home-side-menu" > Sports Type</p>
+          <p class="home btn btn-info btn-lg home1 " (click)="panelExpanded=!panelExpanded"> Indoor Sports <span class="glyphicon glyphicon-triangle-bottom"></span> </p>
+          <div class="panel" *ngIf="panelExpanded" style="margin-top: 40px;text-transform: uppercase;font-weight: bold;font-size: 13px;">
+            <div class="check" *ngFor="let indoor of indoors">
+              <mat-checkbox class="checkbox" [value]="indoor" (change)="sports_type_filter($event)">{{indoor}}</mat-checkbox>
+            </div>
+          </div>
+          <p class="home btn btn-info btn-lg home1" (click)="panelExpanded2=!panelExpanded2"> Outdoor Sports <span class="glyphicon glyphicon-triangle-bottom"></span> </p>
+          <div class="panel" *ngIf="panelExpanded2" style="margin-top: 40px;text-transform: uppercase;font-weight: bold;font-size: 13px;">
+            <div class="check" *ngFor="let outdoor of outdoors">
+              <mat-checkbox class="checkbox" [value]="outdoor" (change)="sports_type_filter1($event)">{{outdoor}}</mat-checkbox>
+            </div>
+          </div>
+        </div>
+        <p class="home-side-menu"data-toggle="collapse" data-target="#state1"> States</p>
+        <div class="collapse sport2" id="state1">
+          <div class="check" *ngFor="let state of states">
+            <mat-checkbox class="checkbox" name="check" value="{{state}}" name="{{state}}" (change)="state_wise_filter($event)">{{state}}</mat-checkbox>
+          </div>
+        </div>
+
+        <div class="sport2" id="state2">
+          <div class="check" *ngFor="let state of states">
+            <mat-checkbox class="checkbox" name="check" value="{{state}}" name="{{state}}" (change)="state_wise_filter($event)">{{state}}</mat-checkbox>
+          </div>
+        </div>
+        <p class="home-side-menu" data-toggle="collapse" data-target="#price1"> Price </p>
+        <div class="collapse sport3" id="price1">
+          <div>
+            <div class="check" *ngFor="let data of priceoptions">
+              <mat-checkbox class="checkbox" value={{data.Value}} (change)="price_wise_filter($event)">{{data.price}}
+              </mat-checkbox>
+            </div>
+          </div>
+        </div>
+
+        <div class="sport3" id="price2">
+          <div>
+            <div class="check" *ngFor="let data of priceoptions">
+              <mat-checkbox class="checkbox" value={{data.Value}} (change)="price_wise_filter($event)">{{data.price}}
+              </mat-checkbox>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-8 col-sm-8" id="mobile-home">
+         
+      <div class="col-xs-12 col-md-12" style="
+       margin-top: 25px;" id="live">
+        <div class="col-md-12 col-xs-12 col-lg-12 col-sm-12 tutorlabel">
+          <label class="tutorlabel1">Live Sports </label>
+        </div>
+        <div *ngIf="!showIndoor">
+          <div *ngIf="!showOutdoor">
+            <div *ngIf="!showState">
+              <div *ngIf="!showPrice">
+
+
+                       <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4" *ngFor="let obj of onlinesport" style="margin-bottom: 10px;">
+                            <div class="card">
+                                <div class="frontside">
+                                    <div class="card-body1 text-centerd" style="background-color: aliceblue;">
+                                        <div>
+                                            <div *ngIf="obj.profile_photo; else accounttype"><img class="imgonline" [src]="obj.profile_photo" (click)="proffDetails(obj)">
+                                            </div>
+                                            <div>
+                                                <ng-template #accounttype>
+                                                    <img class="imgonline" src="assets/images/account.png" (click)="proffDetails(obj)">
+                                                </ng-template>
+                                            </div>
+                                            <h4 class="card-title">{{obj.first_name}}</h4>
+                                            <h5 class="card-proff">{{obj.role}}</h5>
+                                            <div *ngIf="obj.finalatings" class="starrate">
+                                                <ngb-rating [(rate)]="obj.finalatings"></ngb-rating>
+                                                <p class="starrate">{{obj.rating}}</p>
+                                            </div>
+                                            <div *ngIf="!obj.finalatings" class="nonStar">
+                                                <ngb-rating [rate]="currentRate"></ngb-rating>
+                                            </div>
+                                            <hr>
+                                        </div>
+                                        <div>
+                                            <p><img class="expresp" src="assets/images/download.png">Exp:
+                                                {{obj.experience}} years</p>
+                                        </div>
+                                        <div>
+                                            <p><img class="vidprice" src="assets/images/images.png">{{obj.video_price}} /30min</p>
+                                        </div>
+                                        <div *ngIf="obj.is_online" (click)="booking(obj)">
+                                            <div><img class="onlineimg" src="assets/images/call.png"><br>
+                                                <p class="online12"> ONLINE</p>
+                                            </div>
+                                        </div>
+                                        <div *ngIf="!obj.is_online" (click)="offlineBook()">
+                                            <div><img class="onlineimg" src="assets/images/call.png"><br>
+                                                <p class="offline"> OFFLINE</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+
+                <div *ngIf="totalcount==0">
+                  <div class="text-center">
+                    <img src="assets/images/sorry.jpg" style="filter: saturate(10); height: 13vh;">
+                    <h1 style="color:red;" id="norecordsstyle">No astrologers to be found</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div #academicBookingModal class="modal">
+    <div *ngIf="show1" class="col-md-12 col-sm-12 col-lg-12">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #337ab7;">
+                    <span *ngIf !="profiledetails.profile_photo">
+                        <img class="preview-img" src="assets/images/account.png" alt="Preview Image" width="60" height="60" /></span>
+                    <span *ngIf="profiledetails.profile_photo"><img src={{profiledetails.profile_photo}} class="preview-img" alt="Preview Image" width="100" height="100" style="border-radius: 100%;"></span>
+                    <label class="popprofname">{{profiledetails.first_name}}</label><br>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-striped table-bordered">
+                        <tbody>
+                            <tr>
+                                <td> Area Of Expertise </td>
+                                <td>
+                                    {{profiledetails.area_of_expertise}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> Video : </td>
+                                <td>{{profiledetails.video_price}}/-</td>
+                            </tr>
+                            <tr>
+                                <td> Experience : </td>
+                                <td>
+                                    {{profiledetails.experience}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Languages :</td>
+                                <td>
+                                    {{profiledetails.languages}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Location :</td>
+                                <td>
+                                    {{profiledetails.city}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Available Days :</td>
+                                <td>
+                                    {{profiledetails.days}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Available Timings :</td>
+                                <td>
+                                    {{profiledetails.mstime}} - {{profiledetails.metime}}
+                                    & {{profiledetails.estime}} - {{profiledetails.eetime}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer" style="border-top: none;">
+                    <div class="col-md-12 col-xs-12 col-sm-12">
+                        <div class="col-md-12 col-xs-12 col-sm-12 booknow" (click)="booknowSports(profiledetails)"> Book Now </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" #offlineModal>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#337ab7; ">
+                <p class="modal-title" style="color: white;">Booking failure.</p>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                Academics Professional is offline.!
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="modal" #signinpopup role="dialog">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:#445090;height: 59px;">
+        <h3 class="modal-title" style="color: white;text-align: center;">Action Required</h3>
+      </div>
+      <div class="modal-body" style="font-weight: bold;font-size: 20px;text-align: center">
+        <p>Please signin/signup as user to continue booking</p>
+      </div>
+      <div class="modal-footer text-center" style="margin-left: 172px;">
+        <button type="button" class="btn btn-default" data-dismiss="modal" routerLink="/registration/login">ok</button>
+      </div>
+    </div>
+  </div>
+</div>

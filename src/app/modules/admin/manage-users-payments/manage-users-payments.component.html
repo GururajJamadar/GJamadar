@@ -1,0 +1,56 @@
+<app-admin-sidbar></app-admin-sidbar>
+<br><br>
+
+<div class="col-md-10 col-sm-10 col-lg-10 offset-2 registerastrologers">
+  <h3><span id="set">Client Payment Info</span></h3>
+  <div class="col-md-12">
+  <div class="row">
+    <input  [(ngModel)]="searchtext1" type="text" class="searchtext
+" placeholder="Search.." name="searchText2" ng-change="demofunc2(searchText2)">
+    <div class="table-responsive flexcroll" id="disbursementMargin">
+      <table class="table table-bordered table-striped">
+        <thead id="clientprofile">
+          <tr class="tableTextCentre">
+            <th style="background-color: #c5c5d2">Sl No.</th>
+            <th style="background-color: #c5c5d2">Client Name</th>
+            <th style="background-color: #c5c5d2">Client Mobile</th>
+            <th style="background-color: #c5c5d2">Astrologer Name</th>
+            <th style="background-color: #c5c5d2">Astrologer Mobile</th>
+            <th style="background-color: #c5c5d2">DOB</th>
+            <th style="background-color: #c5c5d2">TOB</th>
+            <th style="background-color: #c5c5d2">Status</th>
+            <th style="background-color: #c5c5d2">Paid Amount</th>
+          </tr>
+        </thead>
+        <tbody  >
+          <tr *ngFor="let appointment of clientPaydata | filter:searchtext1">
+            <td>{{appointment.id}}</td>
+            <td>{{appointment.client_name}}</td>
+            <td>{{appointment.client_number}}</td>
+            <td>{{appointment.astrologer_name}}</td>
+            <td>{{appointment.astrologer_mobile_number}}</td>
+            <td>{{appointment.date_of_booking}}</td>
+            <td>{{appointment.time_of_booking}}</td>
+            <td>{{appointment.status}}</td>
+            <td>{{appointment.total_amount}}</td>
+          </tr>
+           <tr class="text-center">
+            <td colspan="9" *ngIf="(clientPaydata| filter: searchtext1).length=== 0" style="color: #ff0052">No Records Found</td>
+          </tr>
+        </tbody>
+        <tbody *ngIf="clientPaydata.length ==0">
+          <tr >
+            <th colspan="21" class="text-center" id="spanmessage">No records found</th>
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+  <div id="paginationStyle">
+  <mat-paginator  auto-hide="false" direction-links="true" boundary-links="true"></mat-paginator>
+</div>
+</div>
+
+

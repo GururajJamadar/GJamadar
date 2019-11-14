@@ -1,0 +1,73 @@
+.bg-img{
+    /*background-image: url('assets/images/nature.jpeg');*/
+height: 726px;
+    min-height: 6px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 6px;
+    width: 147%;
+    overflow-x: hidden;
+    margin-left: -583px;
+ 
+   }
+.division2 {
+    border: 2px inset;
+    background-color: rgba(30, 38, 70, 0.8);
+    border-radius: 3%;
+    width: 361px;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 150px;
+    margin-left: 100vh;
+}
+ .login-heading {
+    font-size: 29px;
+    color: white;
+}
+ .login-heading[_ngcontent-c2] {
+    font-size: 26px;
+    color: white;
+    margin-top: 35px;
+}
+ .btn:hover {
+   opacity: 1;
+ }
+ 
+ 
+ .reg{
+     color: white;
+     margin-top: 5px;
+ }
+ 
+ 
+ .frmcntrl {
+     background-color: transparent;
+     color: #eeeeee;
+     outline: none;
+     outline-style: none;
+     border-top: none;
+     border-left: none;
+     border-right: none;
+     border-bottom: solid #eeeeee 1px;
+     padding: 3px 10px;
+     text-align: center;
+ }
+ .button.md-warn.md-raised {
+     color: rgb(255,255,255);
+     background-color: rgb(255,87,34);
+ }
+
+ @media only screen and (min-width:300px) and (max-width: 767px) {
+ .division2 {
+    border: 2px inset;
+    background-color: rgba(30, 38, 70, 0.8);
+    border-radius: 3%;
+    width: 350px;
+    height: 412px;
+    margin: 0 -9px;
+    position: relative;
+    margin-top: 190px;
+}
+ }

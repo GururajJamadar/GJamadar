@@ -1,0 +1,82 @@
+<app-professional-sidebar></app-professional-sidebar>
+
+
+<div class="col-xs-12 col-sm-12 col-md-8 offset-md-4 " style="margin-top: 73px;">
+  <div class=" paytm ">
+    <label>Payment Details</label>
+  </div>
+
+
+<div>
+	    <!-- <div class="form-group col-md-6" style="margin: 0px;"> -->
+      <label for="startdate">Start Date :</label>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker1" [(ngModel)]="selectdate.startdate" [formControl]="date" class="matdapk">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1 data-toggle="tooltip" data-placement="bottom"></mat-datepicker>
+      </mat-form-field>
+    
+     <!-- <div class="form-group col-md-6" style=""> -->
+      <label for="enddate" class="end">End Date :</label>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker2" [(ngModel)]="selectdate.enddate" [formControl]="serializedDate">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+    
+  </div>
+  <div class="btndiv">
+    <button (click)="paymentstatements(selectdate)">View</button>
+  </div>
+</div>
+<div class="col-md-8 offset-md-4 col-sm-12 col-xs-12" id="homecont">
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <div>
+        <span class="t1">Payment Details</span>
+      </div>
+      <div class="row">
+        <div style="margin-bottom: -35px;">
+          <input [(ngModel)]="searchtext" type="text" class="searchtext
+" placeholder="Search.." name="search">
+
+          <p style="margin-left: 80%;font-size: 20px;">Total Amount</p>
+
+          
+
+          <div class="table-responsive flexcroll" id="disbursementMargin">
+            <table class="table table-bordered table-striped">
+              <thead id="clientprofile">
+                <tr class="tableTextCentre">
+                  <th style="background-color: #c5c5d2">Sl No.</th>
+                  <th style="background-color: #c5c5d2">Client Name</th>
+                  <th style="background-color: #c5c5d2">Client Mobile</th>
+                  <th style="background-color: #c5c5d2">Date Of Booking</th>
+                  <th style="background-color: #c5c5d2">Time Of Booking</th>
+                  <th style="background-color: #c5c5d2">Amount</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let data of details" id="myduesbody">
+                <tr *ngFor="let final of data | filter:searchtext:'client_name' | slice:1; let i = index;">
+                  <td>{{i}}</td>
+                  <td>{{final.client_name}}</td>
+                  <td>{{final.client_number}}</td>
+                  <td>{{final.date_of_booking}}</td>
+                  <td>{{final.time_of_booking}}</td>
+                  <td>{{final.amount}}</td>
+                </tr>
+              </tbody>
+              <tbody *ngIf="!details">
+                <tr>
+                  <th colspan="21" class="text-center" id="spanmessage">No records found</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div id="paginationStyle" style="margin-left: 93px;">
+      </div>
+    </div>
+  </div>
+</div>
